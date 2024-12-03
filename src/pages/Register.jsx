@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../providers/AuthProvider';
+import { toast } from 'react-toastify';
 
 const Register = () => {
+  const {createUser} = useContext(AuthContext)
+  const handleRegister=(e)=>{
+    e.preventDefault();
+    const form = e.target;
+    const name = form.name.value;
+    const email = form.email.value;
+    const photo = form.photo.value;
+    const password = form.password.value;
+    // console.log(name, email, photo, password)
+
+    createUser(email, password)
+    .then((result)=> {
+      console.log(result.user)
+      toast.success('Registration successfull');
+    }).catch(err=>console.log(err.message))
+
+  }
     return (
-        <div className="flex justify-center items-center min-h-[80vh] bg-red-400" style={{
+        <div className="flex justify-center items-center min-h-[80vh]" style={{
             backgroundImage: `url(https://i.ibb.co.com/dWf5gDd/bg.jpg)`,
             backgroundPosition: 'center',
             backgroundSize: 'cover',
@@ -26,7 +45,7 @@ const Register = () => {
               <h2 className="text-white text-2xl font-bold text-center mb-6">
                 REGISTER
               </h2>
-              <form className="space-y-2">
+              <form onSubmit={handleRegister} className="space-y-2">
                 <div className="form-control">
                   <label className="label text-white">
                     <span>Name</span>
