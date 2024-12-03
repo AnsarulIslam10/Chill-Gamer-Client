@@ -1,4 +1,5 @@
 import { FcGoogle } from "react-icons/fc";
+import { Link } from "react-router-dom";
 
 const Login = () => {
   return (
@@ -34,12 +35,12 @@ const Login = () => {
           <form className="space-y-4">
             <div className="form-control">
               <label className="label text-white">
-                <span>Name</span>
+                <span>Email</span>
               </label>
               <input
-                type="text"
-                name="name"
-                placeholder="Please enter your username"
+                type="email"
+                name="email"
+                placeholder="Please enter your email"
                 className="input input-bordered input-info bg-transparent text-white focus:outline-none"
               />
             </div>
@@ -65,9 +66,9 @@ const Login = () => {
           </form>
           <p className="text-center text-white mt-6">
             Don't have an account?{" "}
-            <a href="#" className="text-blue-200 hover:underline">
+            <Link to={'/register'} className="text-blue-200 hover:underline">
               Register
-            </a>
+            </Link>
           </p>
         </div>
       </div>
