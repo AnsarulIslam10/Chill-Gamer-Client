@@ -2,7 +2,7 @@ import React from 'react';
 import ReactStars from "react-rating-stars-component";
 import { Link } from 'react-router-dom';
 const ReviewCard = ({review}) => {
-    const {name, cover, rating, genres} = review
+    const {_id, name, cover, rating, genres} = review
     return (
         <div className='flex flex-col justify-center items-center border p-6 hover:scale-105 transition-all duration-300'>
             <img className='mb-3' src={cover} alt="" />
@@ -18,7 +18,7 @@ const ReviewCard = ({review}) => {
           </div>
             <h1>{genres}</h1>
 
-            <Link to={''} className='btn bg-purple-500 rounded-none text-white mt-3'>Explore Details</Link>
+            <Link to={`/review/${_id}`} className='btn bg-purple-500 rounded-none text-white mt-3'>Explore Details</Link>
         </div>
     );
 };
