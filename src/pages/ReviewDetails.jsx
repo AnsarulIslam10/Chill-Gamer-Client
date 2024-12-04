@@ -2,9 +2,11 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { FaHeart } from "react-icons/fa6";
+import Swal from "sweetalert2";
 const ReviewDetails = () => {
   const loadedReview = useLoaderData();
   const [review, setReview] = useState(loadedReview);
+  console.log(review)
   const {
     name,
     cover,
@@ -15,6 +17,29 @@ const ReviewDetails = () => {
     username,
     email,
   } = review;
+
+  const handleAddToWishlist = () => {
+    const newReview = review;
+    fetch("http://localhost:5000/wishlistReview", {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(newReview),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          Swal.fire({
+            title: "Success!",
+            text: "Added to wishlist Successfully",
+            icon: "success",
+            confirmButtonText: "Close",
+          });
+        }
+      });
+  };
+
   return (
     <div className="max-w-7xl mx-auto px-2 mb-32 mt-32">
       <div className="flex items-center max-w-5xl mx-auto justify-center gap-12 border p-12 shadow-lg">
@@ -41,7 +66,7 @@ const ReviewDetails = () => {
             <p>Email: {email}</p>
         </div>
         <div>
-            <button className="btn bg-purple-500 rounded-none text-white">
+            <button onClick={handleAddToWishlist} className="btn bg-purple-500 rounded-none text-white">
                 Add to Wishlist<FaHeart/>
             </button>
         </div>
