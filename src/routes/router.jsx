@@ -6,10 +6,10 @@ import Register from "../pages/Register";
 import AllReviews from "../pages/AllReviews";
 import AddReview from "../pages/AddReview";
 import MyReviews from "../pages/MyReviews";
-import GameWishList from "../pages/GameWishList";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../pages/ReviewDetails";
 import UpdateReview from "../pages/UpdateReview";
+import GameWatchlist from "../pages/GameWatchlist";
 
 const router = createBrowserRouter([
   {
@@ -39,8 +39,8 @@ const router = createBrowserRouter([
         element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>,
       },
       {
-        path: '/myWishlist',
-        element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>
+        path: '/myWatchlist',
+        element: <PrivateRoute><GameWatchlist></GameWatchlist></PrivateRoute>
       },
       {
         path: '/updateReview/:id',

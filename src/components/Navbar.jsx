@@ -27,7 +27,7 @@ const Navbar = () => {
             <NavLink to={"/myReviews"}>My Review</NavLink>
           </li>
           <li>
-            <NavLink to={"/myWishlist"}>Game WishList</NavLink>
+            <NavLink to={"/myWatchlist"}>Game WishList</NavLink>
           </li>
         </>
       ) : (

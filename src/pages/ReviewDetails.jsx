@@ -18,9 +18,9 @@ const ReviewDetails = () => {
     email,
   } = review;
 
-  const handleAddToWishlist = () => {
+  const handleAddToWatchlist = () => {
     const newReview = review;
-    fetch("http://localhost:5000/wishlistReview", {
+    fetch("http://localhost:5000/myWatchlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -32,7 +32,7 @@ const ReviewDetails = () => {
         if (data.insertedId) {
           Swal.fire({
             title: "Success!",
-            text: "Added to wishlist Successfully",
+            text: "Added to watchlist successfully",
             icon: "success",
             confirmButtonText: "Close",
           });
@@ -66,8 +66,8 @@ const ReviewDetails = () => {
             <p>Email: {email}</p>
         </div>
         <div>
-            <button onClick={handleAddToWishlist} className="btn bg-purple-500 rounded-none text-white">
-                Add to Wishlist<FaHeart/>
+            <button onClick={handleAddToWatchlist} className="btn bg-purple-500 rounded-none text-white">
+                Add to Watchlist<FaHeart/>
             </button>
         </div>
       </div>
