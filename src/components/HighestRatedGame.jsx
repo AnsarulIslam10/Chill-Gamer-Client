@@ -1,6 +1,13 @@
-import React from "react";
-
+import React, { useEffect, useState } from "react";
+import ReactStars from "react-rating-stars-component";
 const HighestRatedGame = () => {
+  const [games, setGames] = useState([]);
+  useEffect(() => {
+    fetch(`http://localhost:5000/highestRatedGames`)
+      .then((res) => res.json())
+      .then((data) => setGames(data))
+      .catch((err) => console.log(err));
+  }, []);
   return (
     <div className="mt-32">
       <h2
@@ -19,60 +26,30 @@ const HighestRatedGame = () => {
       {/* cards */}
       <div className="bg-purple-300 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
-        <div className="p-6 border flex flex-col justify-center items-center">
-          <img
-            className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-            src="https://i.ibb.co.com/hZf1JW4/rdr2-cover.jpg"
-            alt=""
-          />
-          <h2 className="text-2xl font-semibold">Red Dead Redemption 2</h2>
-          <p className="text-yellow-500 font-medium">Rating: 5</p>
-        </div>
+        {games.map((game) => (
+          <div
+            key={game._id}
+            className="p-6 border flex flex-col justify-center items-center"
+          >
+            <img
+              className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
+              src={game.cover}
+              alt=""
+            />
+            <h2 className="text-2xl font-semibold">{game.name}</h2>
+            <p className="text-yellow-500 font-medium">
+              <div className="flex items-center mb-2">
+                <ReactStars
+                  count={5}
+                  value={game.rating}
+                  size={24}
+                  activeColor="#ffd700"
+                />
+                <p>({game.rating})</p>
+              </div>
+            </p>
+          </div>
+        ))}
       </div>
     </div>
   );
