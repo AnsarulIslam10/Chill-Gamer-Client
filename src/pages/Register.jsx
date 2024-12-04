@@ -44,7 +44,7 @@ const Register = () => {
     <div
       className="flex justify-center items-center min-h-[80vh]"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/dWf5gDd/bg.jpg)`,
+        backgroundImage: `url(https://i.ibb.co.com/84K6pWN/register-bg.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -122,7 +122,7 @@ const Register = () => {
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
               {error && (
-                <div className="text-red-500 text-sm mt-2">
+                <div className="text-yellow-300 font-semibold text-sm mt-2">
                   <p>{error}</p>
                 </div>
               )}

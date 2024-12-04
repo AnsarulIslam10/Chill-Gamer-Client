@@ -1,15 +1,62 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
+import { toast } from "react-toastify";
 
 const Login = () => {
+  const {signInUser, signInWithGoogle} = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
+  const [error, setError] = useState("");
+
+
+  const handleLogin = (e)=>{
+    e.preventDefault();
+    const email = e.target.email.value;
+    const password = e.target.password.value;
+
+    setError("");
+    if (password.length < 6) {
+      setError("Password must be at least 6 charecters long.");
+      return;
+    }
+    if (!/[a-z]/.test(password)) {
+      setError("Password must contain at least one lowercase letter");
+      return;
+    }
+    if (!/[A-Z]/.test(password)) {
+      setError("Password must contain at least one Uppercase letter");
+      return;
+    }
+
+    signInUser(email, password)
+      .then((result) => {
+        console.log(result.user)
+        toast.success("Login successful");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+    
+  }
+
+  const handleGoogleSignIn=()=>{
+    signInWithGoogle()
+    .then(result=>{
+      console.log(result.user)
+      toast.success('Login Successfull');
+    })
+    .catch(err=>{
+      toast.error(err.message)
+    })
+  }
+
   return (
     <div
       className="flex justify-center items-center min-h-[80vh] bg-red-400"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/dWf5gDd/bg.jpg)`,
+        backgroundImage: `url(https://i.ibb.co.com/84K6pWN/register-bg.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -33,12 +80,12 @@ const Login = () => {
             LOGIN
           </h2>
           <div className="flex justify-center gap-4 mb-4">
-            <button className="btn btn-circle btn-ghost text-5xl hover:scale-105 transition-all duration-300 text-white">
+            <a onClick={handleGoogleSignIn} className="btn btn-circle btn-ghost text-5xl hover:scale-105 transition-all duration-300 text-white">
               <FcGoogle />
-            </button>
+            </a>
           </div>
           <div className="divider divider-neutral text-white">OR</div>
-          <form className="space-y-4">
+          <form onSubmit={handleLogin} className="space-y-4">
             <div className="form-control">
               <label className="label text-white">
                 <span>Email</span>
@@ -66,6 +113,11 @@ const Login = () => {
               >
                 {showPassword ? <FaEyeSlash /> : <FaEye />}
               </p>
+              {error && (
+                <div className="text-yellow-300 font-semibold text-sm mt-2">
+                  <p>{error}</p>
+                </div>
+              )}
             </div>
             <div>
               <a href="#" className="text-sm text-white hover:underline">
