@@ -1,23 +1,29 @@
+import { useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { FcGoogle } from "react-icons/fc";
 import { Link } from "react-router-dom";
 
 const Login = () => {
+  const [showPassword, setShowPassword] = useState(false);
   return (
-    <div className="flex justify-center items-center min-h-[80vh] bg-red-400" style={{
+    <div
+      className="flex justify-center items-center min-h-[80vh] bg-red-400"
+      style={{
         backgroundImage: `url(https://i.ibb.co.com/dWf5gDd/bg.jpg)`,
-        backgroundPosition: 'center',
-        backgroundSize: 'cover',
-        backgroundRepeat: 'no-repeat'
-    }}>
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
       <div className="w-[700px] flex shadow-xl rounded-2xl overflow-hidden">
         <div className="w-1/2 flex flex-col justify-between">
           <div
             className="flex flex-col items-center h-full"
             style={{
               backgroundImage: `url(https://i.ibb.co.com/GQrxY0W/side-banner-2.jpg)`,
-              backgroundSize: 'cover',
-              backgroundPosition:'center',
-              backgroundRepeat:'no-repeat'
+              backgroundSize: "cover",
+              backgroundPosition: "center",
+              backgroundRepeat: "no-repeat",
             }}
           ></div>
         </div>
@@ -49,24 +55,28 @@ const Login = () => {
                 <span>Password</span>
               </label>
               <input
-                type="password"
+                type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Please enter your password"
                 className="input input-bordered input-info  bg-transparent text-white focus:outline-none"
               />
+              <p
+                onClick={() => setShowPassword(!showPassword)}
+                className="absolute cursor-pointer right-4 text-neutral-300 top-[57px]"
+              >
+                {showPassword ? <FaEyeSlash /> : <FaEye />}
+              </p>
             </div>
             <div>
               <a href="#" className="text-sm text-white hover:underline">
                 Forgot your password?
               </a>
             </div>
-            <button className="btn btn-primary w-full mt-4">
-              Login
-            </button>
+            <button className="btn btn-primary w-full mt-4">Login</button>
           </form>
           <p className="text-center text-white mt-6">
             Don't have an account?{" "}
-            <Link to={'/register'} className="text-blue-200 hover:underline">
+            <Link to={"/register"} className="text-blue-200 hover:underline">
               Register
             </Link>
           </p>
