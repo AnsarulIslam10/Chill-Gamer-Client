@@ -1,8 +1,15 @@
-import React from "react";
-import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
-import { Link, NavLink } from "react-router-dom";
+import React, { useContext } from "react";
+import { FaBars, FaMoon } from "react-icons/fa6";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { AuthContext } from "../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, signOutUser } = useContext(AuthContext);
+  const navigate = useNavigate();
+  const handleLogOut = () => {
+    signOutUser();
+    navigate("/");
+  };
   const links = (
     <>
       <li>
@@ -43,13 +50,33 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-         <button className="btn rounded-full mr-2"><FaMoon/></button>
-          <Link
-            to={"/login"}
-            className="btn bg-purple-500 rounded-none text-white"
-          >
-            Login
-          </Link>
+          <button className="btn btn-sm btn-circle mr-2">
+            <FaMoon />
+          </button>
+          {user && user?.email ? (
+            <div className="flex items-center">
+              <div className="flex items-center tooltip tooltip-bottom cursor-pointer px-1" data-tip={user?.displayName}>
+                <img
+                  className="w-10 h-10 border-2 border-blue-500 rounded-full ml-1"
+                  src={user?.photoURL}
+                  alt=""
+                />
+              </div>
+              <button
+                onClick={handleLogOut}
+                className="btn bg-purple-500 rounded-none text-white"
+              >
+                Log Out
+              </button>
+            </div>
+          ) : (
+            <Link
+              to={"/login"}
+              className="btn bg-purple-500 rounded-none text-white"
+            >
+              Login
+            </Link>
+          )}
         </div>
       </div>
     </nav>
