@@ -3,6 +3,11 @@ import MainLayout from "../MainLayout/MainLayout";
 import HomePage from "../pages/HomePage";
 import Login from "../pages/Login";
 import Register from "../pages/Register";
+import AllReviews from "../pages/AllReviews";
+import AddReview from "../pages/AddReview";
+import MyReviews from "../pages/MyReviews";
+import GameWishList from "../pages/GameWishList";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
   {
@@ -12,6 +17,22 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <HomePage></HomePage>,
+      },
+      {
+        path: '/reviews',
+        element: <AllReviews></AllReviews>
+      },
+      {
+        path: '/addReview',
+        element: <PrivateRoute><AddReview></AddReview></PrivateRoute>
+      },
+      {
+        path: '/myReview',
+        element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+      },
+      {
+        path: '/myWishlist',
+        element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>
       },
       {
         path: '/login',

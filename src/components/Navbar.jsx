@@ -16,17 +16,23 @@ const Navbar = () => {
         <NavLink to={"/"}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/allReviews"}>All Reviews</NavLink>
+        <NavLink to={"/reviews"}>All Reviews</NavLink>
       </li>
-      <li>
-        <NavLink to={"/addReview"}>ADD Review</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/myReview"}>My Review</NavLink>
-      </li>
-      <li>
-        <NavLink to={"/gameWishlist"}>Game WishList</NavLink>
-      </li>
+      {user && user?.email ? (
+        <>
+          <li>
+            <NavLink to={"/addReview"}>ADD Review</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/myReview"}>My Review</NavLink>
+          </li>
+          <li>
+            <NavLink to={"/myWishlist"}>Game WishList</NavLink>
+          </li>
+        </>
+      ) : (
+        ""
+      )}
     </>
   );
   return (
@@ -55,7 +61,10 @@ const Navbar = () => {
           </button>
           {user && user?.email ? (
             <div className="flex items-center">
-              <div className="flex items-center tooltip tooltip-bottom cursor-pointer px-1" data-tip={user?.displayName}>
+              <div
+                className="flex items-center tooltip tooltip-bottom cursor-pointer px-1"
+                data-tip={user?.displayName}
+              >
                 <img
                   className="w-10 h-10 border-2 border-blue-500 rounded-full ml-1"
                   src={user?.photoURL}
