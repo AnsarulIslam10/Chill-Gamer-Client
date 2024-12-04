@@ -10,11 +10,13 @@ import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../pages/ReviewDetails";
 import UpdateReview from "../pages/UpdateReview";
 import GameWatchlist from "../pages/GameWatchlist";
+import ErrorPage from "../pages/ErrorPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout></MainLayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
