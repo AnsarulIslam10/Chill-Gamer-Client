@@ -9,6 +9,7 @@ import MyReviews from "../pages/MyReviews";
 import GameWishList from "../pages/GameWishList";
 import PrivateRoute from "./PrivateRoute";
 import ReviewDetails from "../pages/ReviewDetails";
+import UpdateReview from "../pages/UpdateReview";
 
 const router = createBrowserRouter([
   {
@@ -40,6 +41,11 @@ const router = createBrowserRouter([
       {
         path: '/myWishlist',
         element: <PrivateRoute><GameWishList></GameWishList></PrivateRoute>
+      },
+      {
+        path: '/updateReview/:id',
+        element: <UpdateReview></UpdateReview>,
+        loader: ({params})=> fetch(`http://localhost:5000/updateReview/${params.id}`)
       },
       {
         path: '/login',

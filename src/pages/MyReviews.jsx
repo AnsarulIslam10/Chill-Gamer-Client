@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { FaPen, FaTrash, FaX } from "react-icons/fa6";
 import Swal from "sweetalert2";
@@ -73,9 +73,9 @@ const MyReviews = () => {
                 <td>{review.name}</td>
                 <td>{review.genres}</td>
                 <td className="text-center">
-                  <button className="btn btn-circle mr-2 bg-purple-500 text-white">
+                  <Link to={`/updateReview/${review._id}`} className="btn btn-circle mr-2 bg-purple-500 text-white">
                     <FaPen />
-                  </button>
+                  </Link>
                   <button onClick={()=>handleDelete(review._id)} className="btn btn-circle bg-red-500 text-white">
                     <FaTrash />
                   </button>

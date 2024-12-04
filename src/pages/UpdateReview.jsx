@@ -1,10 +1,24 @@
 import React, { useContext } from "react";
+import { useLoaderData } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-const AddReview = () => {
-  const { user } = useContext(AuthContext);
 
-  const handleAddReview = (e) => {
+const UpdateReview = () => {
+  const review = useLoaderData();
+  const { user } = useContext(AuthContext);
+  const {
+    _id,
+    name,
+    cover,
+    rating,
+    year,
+    genres,
+    review: description,
+    username,
+    email,
+  } = review;
+  console.log(review);
+  const handleUpdateReview = (e) => {
     e.preventDefault();
     const form = e.target;
     const name = form.name.value;
@@ -16,7 +30,7 @@ const AddReview = () => {
     const email = form.email.value;
     const review = form.review.value;
     const rating = Number(ratings);
-    const newReview = {
+    const updatedReview = {
       name,
       cover,
       rating,
@@ -27,19 +41,19 @@ const AddReview = () => {
       email,
     };
 
-    fetch("http://localhost:5000/reviews", {
-      method: "POST",
+    fetch(`http://localhost:5000/updateReview/${_id}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
       },
-      body: JSON.stringify(newReview),
+      body: JSON.stringify(updatedReview),
     })
       .then((res) => res.json())
       .then((data) => {
-        if (data.insertedId) {
+        if (data.modifiedCount) {
           Swal.fire({
             title: "Success!",
-            text: "Review Added Successfully",
+            text: "Review Updated Successfully",
             icon: "success",
             confirmButtonText: "Close",
           });
@@ -47,7 +61,8 @@ const AddReview = () => {
       });
   };
   return (
-    <div className="min-h-screen"
+    <div
+      className="min-h-screen"
       style={{
         backgroundImage: `url(https://i.ibb.co.com/Bnz6mh0/pubg-mobile-game-image-5.jpg)`,
         backgroundPosition: "center",
@@ -57,9 +72,9 @@ const AddReview = () => {
     >
       <div className="max-w-7xl px-2 mx-auto py-16">
         <div className="card w-full  max-w-3xl backdrop-blur-md shadow-lg mx-auto shrink-0">
-          <form onSubmit={handleAddReview} className="card-body shadow-lg">
+          <form onSubmit={handleUpdateReview} className="card-body shadow-lg">
             <h2 className="text-4xl font-bold text-white text-center">
-              Add Your Game Review
+              Update Your Game Review
             </h2>
             <div className="form-control">
               <label className="label">
@@ -69,6 +84,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
+                defaultValue={name}
                 name="name"
                 placeholder="Please enter game name"
                 className="input input-bordered"
@@ -83,6 +99,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
+                defaultValue={cover}
                 name="cover"
                 placeholder="Please enter game cover image"
                 className="input input-bordered"
@@ -96,6 +113,7 @@ const AddReview = () => {
               <select
                 className="select select-bordered w-full"
                 name="ratings"
+                defaultValue={rating}
                 id=""
               >
                 <option value="1">1</option>
@@ -113,6 +131,7 @@ const AddReview = () => {
               </label>
               <input
                 type="text"
+                defaultValue={year}
                 name="year"
                 placeholder="Please enter game name"
                 className="input input-bordered"
@@ -126,6 +145,7 @@ const AddReview = () => {
               <select
                 className="select select-bordered w-full"
                 name="genres"
+                defaultValue={genres}
                 id=""
               >
                 <option value="Action">Action</option>
@@ -143,8 +163,8 @@ const AddReview = () => {
               <input
                 type="text"
                 name="username"
-                placeholder="Your Name"
-                defaultValue={user.displayName}
+                placeholder="Your name"
+                defaultValue={user?.displayName}
                 readOnly
                 className="input input-bordered"
                 required
@@ -160,7 +180,7 @@ const AddReview = () => {
                 type="email"
                 name="email"
                 placeholder="email"
-                defaultValue={user.email}
+                defaultValue={user?.email}
                 readOnly
                 className="input input-bordered"
                 required
@@ -174,13 +194,14 @@ const AddReview = () => {
               </label>
               <textarea
                 name="review"
+                defaultValue={description}
                 className="textarea textarea-bordered"
                 placeholder="Write your review"
               ></textarea>
             </div>
             <div className="form-control mt-6">
               <button className="btn bg-purple-500 rounded-none text-white border-none">
-                Add Review
+                Update Review
               </button>
             </div>
           </form>
@@ -190,4 +211,4 @@ const AddReview = () => {
   );
 };
 
-export default AddReview;
+export default UpdateReview;
