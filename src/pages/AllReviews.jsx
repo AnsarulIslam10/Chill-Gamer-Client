@@ -21,6 +21,17 @@ const AllReviews = () => {
     }
     setReviews(sortedReviews);
   };
+
+  const handleFilter = (e)=>{
+    const genre = e.target.value;
+    if (genre === 'All') {
+      setReviews(loadedReviews);
+    }
+    else{
+      const filteredReviews = loadedReviews.filter(review=>review.genres === genre)
+      setReviews(filteredReviews);
+    }
+  }
   console.log(reviews);
   return (
     <div className="max-w-7xl px-2 mx-auto">
@@ -31,11 +42,27 @@ const AllReviews = () => {
           inventore error
         </p>
       </div>
-      <div className="flex justify-end mr-10 mb-3">
+      <div className="flex justify-end gap-3 mb-3">
         <div>
-          <label className="label">
-            <span className="label-text text-white text-lg">Sort</span>
-          </label>
+          <select
+            className="select select-bordered rounded-none w-full"
+            name="ratings"
+            id=""
+            onChange={handleFilter}
+          >
+            <option disabled selected>
+              Filter
+            </option>
+            <option value="All">All</option>
+            <option value="Action">Action</option>
+            <option value="RPG">RPG</option>
+            <option value="FPS">FPS</option>
+            <option value="Adventure">Adventure</option>
+            <option value="Survival">Survival</option>
+            <option value="Horror">Horror</option>
+          </select>
+        </div>
+        <div>
           <select
             className="select select-bordered rounded-none w-full"
             name="ratings"
