@@ -7,20 +7,12 @@ const AllReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
 
-  const handleSort = (e) => {
+  const handleSort = async (e)=>{
     const sort = e.target.value;
-    let sortedReviews;
-    if (sort === "rating-ascending") {
-      sortedReviews = [...reviews].sort((a, b) => a.rating - b.rating);
-    } else if (sort === "rating-descending") {
-      sortedReviews = [...reviews].sort((a, b) => b.rating - a.rating);
-    } else if (sort === "year-ascending") {
-      sortedReviews = [...reviews].sort((a, b) => a.year - b.year);
-    } else if (sort === "year-descending") {
-      sortedReviews = [...reviews].sort((a, b) => b.year - a.year);
-    }
-    setReviews(sortedReviews);
-  };
+    const res = await fetch(`http://localhost:5000/reviews/sortedReviews?sortBy=${sort}`)
+    const sortedReviews = await res.json()
+    setReviews(sortedReviews)
+  }
 
   const handleFilter = (e)=>{
     const genre = e.target.value;
