@@ -27,7 +27,7 @@ const Navbar = () => {
             <NavLink to={"/myReviews"}>My Review</NavLink>
           </li>
           <li>
-            <NavLink to={"/myWatchlist"}>Game WishList</NavLink>
+            <NavLink to={"/myWatchlist"}>Game WatchList</NavLink>
           </li>
         </>
       ) : (
@@ -79,12 +79,20 @@ const Navbar = () => {
               </button>
             </div>
           ) : (
-            <Link
+            <div>
+              <Link
               to={"/login"}
               className="btn bg-purple-500 rounded-none text-white"
             >
               Login
             </Link>
+              <Link
+              to={"/register"}
+              className="btn bg-purple-500 rounded-none text-white"
+            >
+              Register
+            </Link>
+            </div>
           )}
         </div>
       </div>

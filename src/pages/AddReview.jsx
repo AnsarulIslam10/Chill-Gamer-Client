@@ -9,13 +9,13 @@ const AddReview = () => {
     const form = e.target;
     const name = form.name.value;
     const cover = form.cover.value;
-    const ratings = form.ratings.value;
+    const rating = form.rating.value;
     const year = form.year.value;
     const genres = form.genres.value;
     const username = form.username.value;
     const email = form.email.value;
     const review = form.review.value;
-    const rating = Number(ratings);
+    // const rating = Number(ratings);
     const newReview = {
       name,
       cover,
@@ -47,7 +47,8 @@ const AddReview = () => {
       });
   };
   return (
-    <div className="min-h-screen"
+    <div
+      className="min-h-screen"
       style={{
         backgroundImage: `url(https://i.ibb.co.com/Bnz6mh0/pubg-mobile-game-image-5.jpg)`,
         backgroundPosition: "center",
@@ -93,17 +94,16 @@ const AddReview = () => {
               <label className="label">
                 <span className="label-text text-white text-lg">Rating</span>
               </label>
-              <select
-                className="select select-bordered w-full"
-                name="ratings"
+              <input
+                type="number"
+                name="rating"
                 id=""
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+                min="1"
+                max="5"
+                step="1"
+                placeholder="Enter rating (1-5)"
+                className="input input-bordered"
+              />
             </div>
             <div className="form-control">
               <label className="label">

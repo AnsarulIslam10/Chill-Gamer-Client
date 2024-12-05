@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
+import { Link } from "react-router-dom";
 const HighestRatedGame = () => {
   const [games, setGames] = useState([]);
   useEffect(() => {
@@ -24,7 +25,7 @@ const HighestRatedGame = () => {
         <p className="ml-32 mt-9">Highest Rated Games</p>
       </h2>
       {/* cards */}
-      <div className="bg-purple-300 p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
         {games.map((game) => (
           <div
@@ -32,7 +33,7 @@ const HighestRatedGame = () => {
             className="p-6 border flex flex-col justify-center items-center"
           >
             <img
-              className="w-52 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
+              className="w-80 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
               src={game.cover}
               alt=""
             />
@@ -48,6 +49,12 @@ const HighestRatedGame = () => {
                 <p>({game.rating})</p>
               </div>
             </p>
+            <Link
+              to={`/review/${game._id}`}
+              className="btn bg-purple-500 rounded-none border-none text-white mt-3"
+            >
+              Explore Details
+            </Link>
           </div>
         ))}
       </div>
