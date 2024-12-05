@@ -2,7 +2,8 @@ import React, { useContext } from "react";
 import { FaBars, FaMoon } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-
+import { Tooltip } from 'react-tooltip'
+import 'react-tooltip/dist/react-tooltip.css'
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -62,8 +63,10 @@ const Navbar = () => {
           {user && user?.email ? (
             <div className="flex items-center">
               <div
-                className="flex items-center tooltip tooltip-bottom cursor-pointer px-1"
-                data-tip={user?.displayName}
+                className="flex items-center cursor-pointer px-1"
+                data-tooltip-id="my-tooltip"
+                  data-tooltip-place="bottom"
+                data-tooltip-content={user.displayName}
               >
                 <img
                   className="w-10 h-10 border-2 border-blue-500 rounded-full ml-1"
@@ -71,6 +74,7 @@ const Navbar = () => {
                   alt=""
                 />
               </div>
+                <Tooltip id="my-tooltip" className="z-10" />
               <button
                 onClick={handleLogOut}
                 className="btn bg-purple-500 rounded-none text-white"
