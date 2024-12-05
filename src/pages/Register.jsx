@@ -5,7 +5,7 @@ import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
-  const { createUser, setUser } = useContext(AuthContext);
+  const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const handleRegister = (e) => {
@@ -36,6 +36,7 @@ const Register = () => {
         console.log(result.user);
         const user = result.user
         setUser(user);
+        updateUserProfile({displayName: name, photoURL: photo})
         toast.success("Registration successfull");
       })
       .catch((err) => {
