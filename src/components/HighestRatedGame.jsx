@@ -11,19 +11,7 @@ const HighestRatedGame = () => {
   }, []);
   return (
     <div className="mt-32">
-      {/* <h2
-        className="text-3xl text-white inline-block p-4 font-semibold italic"
-        style={{
-          backgroundImage: `url('https://i.ibb.co.com/mFDN1Np/titlebg.png')`,
-          backgroundSize: "cover",
-          backgroundPosition: "center",
-          backgroundRepeat: "no-repeat",
-          width: "500px",
-          height: "120px",
-        }}
-      >
-        <p className="ml-32 mt-9">Highest Rated Games</p>
-      </h2> */}
+      <h2 className="mb-8 text-center text-4xl font-bold">Highest Rated Games</h2>
       {/* cards */}
       <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
