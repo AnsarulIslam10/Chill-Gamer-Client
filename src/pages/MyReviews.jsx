@@ -7,10 +7,9 @@ import Swal from "sweetalert2";
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
-  console.log(user.email);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myReviews?email=${user.email}`)
+    fetch(`https://chill-gamer-server-tau.vercel.app/myReviews?email=${user.email}`)
       .then((res) => res.json())
       .then((data) => setMyReviews(data))
       .catch((err) => console.log(err));
@@ -31,7 +30,7 @@ const MyReviews = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/review/${id}`, {
+        fetch(`https://chill-gamer-server-tau.vercel.app/review/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())

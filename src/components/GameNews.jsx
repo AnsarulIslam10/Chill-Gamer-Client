@@ -4,7 +4,7 @@ import GameNewsCard from './GameNewsCard';
 const GameNews = () => {
     const [gameNews, setGameNews] = useState([])
     useEffect(()=>{
-        fetch('http://localhost:5000/gameNews')
+        fetch('https://chill-gamer-server-tau.vercel.app/gameNews')
         .then(res=>res.json())
         .then(data=>setGameNews(data))
     },[])

@@ -32,7 +32,6 @@ const Login = () => {
 
     signInUser(email, password)
       .then((result) => {
-        console.log(result.user)
         toast.success("Login successful");
       })
       .catch((err) => {
@@ -44,7 +43,6 @@ const Login = () => {
   const handleGoogleSignIn=()=>{
     signInWithGoogle()
     .then(result=>{
-      console.log(result.user)
       toast.success('Login Successfull');
     })
     .catch(err=>{

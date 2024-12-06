@@ -25,12 +25,12 @@ const router = createBrowserRouter([
       {
         path: '/reviews',
         element: <AllReviews></AllReviews>,
-        loader: ()=> fetch('http://localhost:5000/reviews')
+        loader: ()=> fetch('https://chill-gamer-server-tau.vercel.app/reviews')
       },
       {
         path: '/review/:id',
         element: <ReviewDetails></ReviewDetails>,
-        loader: ({params})=> fetch(`http://localhost:5000/review/${params.id}`)
+        loader: ({params})=> fetch(`https://chill-gamer-server-tau.vercel.app/review/${params.id}`)
       },
       {
         path: '/addReview',
@@ -47,7 +47,7 @@ const router = createBrowserRouter([
       {
         path: '/updateReview/:id',
         element: <UpdateReview></UpdateReview>,
-        loader: ({params})=> fetch(`http://localhost:5000/updateReview/${params.id}`)
+        loader: ({params})=> fetch(`https://chill-gamer-server-tau.vercel.app/updateReview/${params.id}`)
       },
       {
         path: '/login',

@@ -8,9 +8,7 @@ const ReviewDetails = () => {
   const loadedReview = useLoaderData();
   const [review, setReview] = useState(loadedReview);
   const {user} = useContext(AuthContext)
-  console.log(user.email)
 
-  console.log(review)
   const {
     name,
     cover,
@@ -28,7 +26,7 @@ const ReviewDetails = () => {
       email: user.email,
       username: user.displayName
     }
-    fetch("http://localhost:5000/myWatchlist", {
+    fetch("https://chill-gamer-server-tau.vercel.app/myWatchlist", {
       method: "POST",
       headers: {
         "content-type": "application/json",

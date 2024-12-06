@@ -14,10 +14,7 @@ const UpdateReview = () => {
     year,
     genres,
     review: description,
-    username,
-    email,
   } = review;
-  console.log(review);
   const handleUpdateReview = (e) => {
     e.preventDefault();
     const form = e.target;
@@ -41,7 +38,7 @@ const UpdateReview = () => {
       email,
     };
 
-    fetch(`http://localhost:5000/updateReview/${_id}`, {
+    fetch(`https://chill-gamer-server-tau.vercel.app/updateReview/${_id}`, {
       method: "PUT",
       headers: {
         "content-type": "application/json",

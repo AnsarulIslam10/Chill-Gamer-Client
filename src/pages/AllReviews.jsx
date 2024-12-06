@@ -9,7 +9,7 @@ const AllReviews = () => {
 
   const handleSort = async (e)=>{
     const sort = e.target.value;
-    const res = await fetch(`http://localhost:5000/reviews/sortedReviews?sortBy=${sort}`)
+    const res = await fetch(`https://chill-gamer-server-tau.vercel.app/reviews/sortedReviews?sortBy=${sort}`)
     const sortedReviews = await res.json()
     setReviews(sortedReviews)
   }
@@ -24,7 +24,6 @@ const AllReviews = () => {
       setReviews(filteredReviews);
     }
   }
-  console.log(reviews);
   return (
     <div className="max-w-7xl px-2 my-16 mx-auto">
       <div className="text-center mt-6 mb-12">

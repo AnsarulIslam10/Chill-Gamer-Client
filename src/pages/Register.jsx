@@ -15,7 +15,6 @@ const Register = () => {
     const email = form.email.value;
     const photo = form.photo.value;
     const password = form.password.value;
-    // console.log(name, email, photo, password)
 
     setError("");
     if (password.length < 6) {
@@ -33,7 +32,6 @@ const Register = () => {
 
     createUser(email, password)
       .then((result) => {
-        console.log(result.user);
         const user = result.user
         setUser(user);
         updateUserProfile({displayName: name, photoURL: photo})

@@ -6,10 +6,9 @@ import Swal from "sweetalert2";
 const GameWatchlist = () => {
   const { user } = useContext(AuthContext);
   const [myWatchlist, setMyWatchlist] = useState([]);
-  console.log(user.email);
 
   useEffect(() => {
-    fetch(`http://localhost:5000/myWatchlist?email=${user?.email}`)
+    fetch(`https://chill-gamer-server-tau.vercel.app/myWatchlist?email=${user?.email}`)
       .then((res) => res.json())
       .then((data) => setMyWatchlist(data))
       .catch((err) => console.log(err));
@@ -26,7 +25,7 @@ const GameWatchlist = () => {
       confirmButtonText: "Yes, delete it!",
     }).then((result) => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/myWatchlist/${id}`, {
+        fetch(`https://chill-gamer-server-tau.vercel.app/myWatchlist/${id}`, {
           method: "DELETE",
         })
           .then((res) => res.json())
@@ -44,7 +43,7 @@ const GameWatchlist = () => {
       }
     });
   };
-  console.log(myWatchlist);
+
   if (!myWatchlist || myWatchlist.length === 0) {
     return <p>No Reviews found.</p>;
   }

@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const HighestRatedGame = () => {
   const [games, setGames] = useState([]);
   useEffect(() => {
-    fetch(`http://localhost:5000/highestRatedGames`)
+    fetch(`https://chill-gamer-server-tau.vercel.app/highestRatedGames`)
       .then((res) => res.json())
       .then((data) => setGames(data))
       .catch((err) => console.log(err));
