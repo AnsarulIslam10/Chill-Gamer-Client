@@ -1,6 +1,8 @@
 import React, { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import ReactStars from "react-rating-stars-component";
+import { FaTrash } from "react-icons/fa6";
+import Swal from "sweetalert2";
 const GameWatchlist = () => {
   const { user } = useContext(AuthContext);
   const [myWatchlist, setMyWatchlist] = useState([]);
@@ -12,6 +14,36 @@ const GameWatchlist = () => {
       .then((data) => setMyWatchlist(data))
       .catch((err) => console.log(err));
   }, [user]);
+
+  const handleDelete = (id) => {
+    Swal.fire({
+      title: "Are you sure?",
+      text: "You won't be able to revert this!",
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#3085d6",
+      cancelButtonColor: "#d33",
+      confirmButtonText: "Yes, delete it!",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/myWatchlist/${id}`, {
+          method: "DELETE",
+        })
+          .then((res) => res.json())
+          .then((data) => {
+            if (data.deletedCount > 0) {
+              Swal.fire({
+                title: "Deleted!",
+                text: "Your review has been deleted.",
+                icon: "success",
+              });
+              const remainingReviews = myWatchlist.filter((reviews) => reviews._id !== id);
+              setMyWatchlist(remainingReviews);
+            }
+          });
+      }
+    });
+  };
   console.log(myWatchlist);
   if (!myWatchlist || myWatchlist.length === 0) {
     return <p>No Reviews found.</p>;
@@ -29,6 +61,7 @@ const GameWatchlist = () => {
               <th>Genre</th>
               <th>Rating</th>
               <th>Release Year</th>
+              <th>Action</th>
             </tr>
           </thead>
           <tbody>
@@ -48,6 +81,11 @@ const GameWatchlist = () => {
                   />
                 </td>
                 <td>{watchlist.year}</td>
+                <td className="text-center flex flex-col justify-center sm:flex-row">
+                  <button onClick={()=>handleDelete(watchlist._id)} className="btn btn-sm sm:btn-md btn-circle bg-red-500 text-white">
+                    <FaTrash />
+                  </button>
+                </td>
               </tr>
             ))}
           </tbody>

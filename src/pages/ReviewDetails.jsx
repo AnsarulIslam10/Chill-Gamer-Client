@@ -1,11 +1,15 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReactStars from "react-rating-stars-component";
 import { FaHeart } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import { AuthContext } from "../providers/AuthProvider";
 const ReviewDetails = () => {
   const loadedReview = useLoaderData();
   const [review, setReview] = useState(loadedReview);
+  const {user} = useContext(AuthContext)
+  console.log(user.email)
+
   console.log(review)
   const {
     name,
@@ -19,7 +23,11 @@ const ReviewDetails = () => {
   } = review;
 
   const handleAddToWatchlist = () => {
-    const newReview = review;
+    const newReview= {
+      ...review,
+      email: user.email,
+      name: user.name
+    }
     fetch("http://localhost:5000/myWatchlist", {
       method: "POST",
       headers: {
