@@ -51,7 +51,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="font-bold px-0 text-purple-600 text-2xl">Chill Gamer</a>
+          <a className="font-bold px-0 text-purple-600 sm:text-2xl">Chill Gamer</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
@@ -77,7 +77,7 @@ const Navbar = () => {
                 <Tooltip id="my-tooltip" className="z-10" />
               <button
                 onClick={handleLogOut}
-                className="btn bg-purple-500 rounded-none text-white"
+                className="btn btn-sm sm:btn-md bg-purple-500 rounded-none text-white"
               >
                 Log Out
               </button>
@@ -86,13 +86,13 @@ const Navbar = () => {
             <div>
               <Link
               to={"/login"}
-              className="btn bg-purple-500 rounded-none text-white"
+              className="btn btn-sm px-1 sm:px-3 sm:btn-md bg-purple-500 rounded-none text-white"
             >
               Login
             </Link>
               <Link
               to={"/register"}
-              className="btn bg-purple-500 rounded-none text-white"
+              className="btn btn-sm px-1 sm:px-3 sm:btn-md bg-purple-500 rounded-none text-white"
             >
               Register
             </Link>
