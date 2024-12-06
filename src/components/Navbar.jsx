@@ -14,21 +14,21 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>Home</NavLink>
       </li>
       <li>
-        <NavLink to={"/reviews"}>All Reviews</NavLink>
+        <NavLink to={"/reviews"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>All Reviews</NavLink>
       </li>
       {user && user?.email ? (
         <>
           <li>
-            <NavLink to={"/addReview"}>ADD Review</NavLink>
+            <NavLink to={"/addReview"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>ADD Review</NavLink>
           </li>
           <li>
-            <NavLink to={"/myReviews"}>My Review</NavLink>
+            <NavLink to={"/myReviews"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>My Review</NavLink>
           </li>
           <li>
-            <NavLink to={"/myWatchlist"}>Game WatchList</NavLink>
+            <NavLink to={"/myWatchlist"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>Game WatchList</NavLink>
           </li>
         </>
       ) : (
