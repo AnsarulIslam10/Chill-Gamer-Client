@@ -67,16 +67,16 @@ const MyReviews = () => {
           <tbody>
             {/* row 1 */}
             {myReviews.map((review, idx) => (
-              <tr key={review._id} className="hover">
+              <tr key={review._id} className="hover dark:hover:text-black dark:border-gray-500">
                 <th>{idx + 1}</th>
                 <td>{review.username}</td>
                 <td>{review.name}</td>
                 <td>{review.genres}</td>
                 <td className="text-center flex flex-col justify-center sm:flex-row">
-                  <Link to={`/updateReview/${review._id}`} className="btn btn-sm sm:btn-md btn-circle mr-2 bg-purple-500 text-white">
+                  <Link to={`/updateReview/${review._id}`} className="btn btn-sm sm:btn-md btn-circle border-none mr-2 bg-purple-500 text-white">
                     <FaPen />
                   </Link>
-                  <button onClick={()=>handleDelete(review._id)} className="btn btn-sm sm:btn-md btn-circle bg-red-500 text-white">
+                  <button onClick={()=>handleDelete(review._id)} className="btn btn-sm sm:btn-md btn-circle border-none bg-red-500 text-white">
                     <FaTrash />
                   </button>
                 </td>

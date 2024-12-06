@@ -26,7 +26,7 @@ const AllReviews = () => {
   }
   console.log(reviews);
   return (
-    <div className="max-w-7xl px-2 mx-auto">
+    <div className="max-w-7xl px-2 my-16 mx-auto">
       <div className="text-center mt-6 mb-12">
         <h2 className="text-3xl font-semibold">All Reviews</h2>
         <p>
@@ -36,7 +36,7 @@ const AllReviews = () => {
       <div className="flex justify-end gap-3 mb-3">
         <div>
           <select
-            className="select select-bordered rounded-none w-full"
+            className="select select-bordered dark:bg-gray-600 rounded-none w-full"
             name="ratings"
             id=""
             onChange={handleFilter}
@@ -55,7 +55,7 @@ const AllReviews = () => {
         </div>
         <div>
           <select
-            className="select select-bordered rounded-none w-full"
+            className="select select-bordered dark:bg-gray-600 rounded-none w-full"
             name="ratings"
             id=""
             onChange={handleSort}

@@ -6,7 +6,7 @@ import GameNews from '../components/GameNews';
 
 const HomePage = () => {
     return (
-        <div className='max-w-7xl mx-auto px-2'>
+        <div className='max-w-7xl mx-auto dark:text-[#e0e0e0] dark:bg-[#181818] px-2'>
             <Banner></Banner>
             <HighestRatedGame></HighestRatedGame>
             <TrendingGames></TrendingGames>

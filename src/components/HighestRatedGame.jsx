@@ -16,7 +16,7 @@ const HighestRatedGame = () => {
       <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
         {games.map((game) => (
-          <div className="flex flex-col justify-center items-center border p-6 hover:scale-105 transition-all duration-300">
+          <div className="flex flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
           <img className="mb-3" src={game.cover} alt="" />
           <h2 className="text-2xl font-semibold">{game.name}</h2>
           <div className="flex items-center">
@@ -28,7 +28,7 @@ const HighestRatedGame = () => {
     
           <Link
             to={`/review/${game._id}`}
-            className="btn bg-purple-500 rounded-none text-white mt-3"
+            className="btn bg-purple-500 border-none rounded-none text-white mt-3"
           >
             Explore Details
           </Link>

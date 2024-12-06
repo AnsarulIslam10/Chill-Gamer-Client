@@ -56,20 +56,18 @@ const GameWatchlist = () => {
           <thead className="bg-purple-500 text-white">
             <tr>
               <th></th>
-              <th>User Name</th>
               <th>Game Title</th>
               <th>Genre</th>
               <th>Rating</th>
               <th>Release Year</th>
-              <th>Action</th>
+              <th className="text-center">Action</th>
             </tr>
           </thead>
           <tbody>
             {/* row 1 */}
             {myWatchlist.map((watchlist, idx) => (
-              <tr key={watchlist._id}>
+              <tr key={watchlist._id} className="hover dark:hover:text-black dark:border-gray-500">
                 <th>{idx + 1}</th>
-                <td>{watchlist.username}</td>
                 <td>{watchlist.name}</td>
                 <td>{watchlist.genres}</td>
                 <td>
@@ -82,7 +80,7 @@ const GameWatchlist = () => {
                 </td>
                 <td>{watchlist.year}</td>
                 <td className="text-center flex flex-col justify-center sm:flex-row">
-                  <button onClick={()=>handleDelete(watchlist._id)} className="btn btn-sm sm:btn-md btn-circle bg-red-500 text-white">
+                  <button onClick={()=>handleDelete(watchlist._id)} className="btn btn-sm sm:btn-md btn-circle border-none bg-red-500 text-white">
                     <FaTrash />
                   </button>
                 </td>

@@ -1,5 +1,5 @@
-import React, { useContext } from "react";
-import { FaBars, FaMoon } from "react-icons/fa6";
+import React, { useContext, useEffect, useState } from "react";
+import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { Tooltip } from 'react-tooltip'
@@ -7,6 +7,22 @@ import 'react-tooltip/dist/react-tooltip.css'
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  const [theme, setTheme] = useState('light');
+
+  useEffect(()=>{
+    const storedTheme = localStorage.getItem('theme') || 'light';
+    setTheme(storedTheme);
+    document.body.classList.add(storedTheme)
+  }, []);
+  
+  const toggleTheme = ()=>{
+    const updatedTheme = theme === 'light' ? 'dark' : 'light';
+    setTheme(updatedTheme)
+    localStorage.setItem('theme', updatedTheme);
+    document.body.className = updatedTheme
+  }
+
   const handleLogOut = () => {
     signOutUser();
     navigate("/");
@@ -38,7 +54,7 @@ const Navbar = () => {
   );
   return (
     <nav className="max-w-7xl px-2 mx-auto">
-      <div className="navbar bg-base-100 px-0">
+      <div className="navbar bg-base-100 dark:bg-[#181818] dark:text-[#e0e0e0] px-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="mr-4 text-xl lg:hidden">
@@ -57,8 +73,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button className="btn btn-sm btn-circle mr-2">
-            <FaMoon />
+          <button onClick={toggleTheme} className="btn btn-sm btn-circle mr-2">
+            {theme === 'light'? <FaMoon /> : <FaSun/>}
           </button>
           {user && user?.email ? (
             <div className="flex items-center">
@@ -69,7 +85,7 @@ const Navbar = () => {
                 data-tooltip-content={user.displayName}
               >
                 <img
-                  className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1"
+                  className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1 mr-2"
                   src={user?.photoURL}
                   alt=""
                 />
@@ -77,7 +93,7 @@ const Navbar = () => {
                 <Tooltip id="my-tooltip" className="z-10" />
               <button
                 onClick={handleLogOut}
-                className="btn btn-sm sm:btn-md bg-purple-500 rounded-none text-white"
+                className="btn btn-sm sm:btn-md bg-purple-500 border-none rounded-none text-white"
               >
                 Log Out
               </button>
@@ -86,13 +102,13 @@ const Navbar = () => {
             <div>
               <Link
               to={"/login"}
-              className="btn btn-sm px-1 sm:px-3 sm:btn-md bg-purple-500 rounded-none text-white"
+              className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
             >
               Login
             </Link>
               <Link
               to={"/register"}
-              className="btn btn-sm px-1 sm:px-3 sm:btn-md bg-purple-500 rounded-none text-white"
+              className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
             >
               Register
             </Link>
