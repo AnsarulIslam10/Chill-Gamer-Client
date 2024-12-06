@@ -13,37 +13,26 @@ const HighestRatedGame = () => {
     <div className="mt-32">
       <h2 className="mb-8 text-center text-4xl font-bold">Highest Rated Games</h2>
       {/* cards */}
-      <div className=" p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
         {games.map((game) => (
-          <div
-            key={game._id}
-            className="p-6 border flex flex-col justify-center items-center"
-          >
-            <img
-              className="w-80 hover:scale-105 hover:-translate-y-3 transition-all duration-300"
-              src={game.cover}
-              alt=""
-            />
-            <h2 className="text-2xl font-semibold">{game.name}</h2>
-            <p className="text-yellow-500 font-medium">
-              <div className="flex items-center mb-2">
-                <ReactStars
-                  count={5}
-                  value={game.rating}
-                  size={24}
-                  activeColor="#ffd700"
-                />
-                <p>({game.rating})</p>
-              </div>
-            </p>
-            <Link
-              to={`/review/${game._id}`}
-              className="btn bg-purple-500 rounded-none border-none text-white mt-3"
-            >
-              Explore Details
-            </Link>
+          <div className="flex flex-col justify-center items-center border p-6 hover:scale-105 transition-all duration-300">
+          <img className="mb-3" src={game.cover} alt="" />
+          <h2 className="text-2xl font-semibold">{game.name}</h2>
+          <div className="flex items-center">
+            <ReactStars count={5} value={game.rating} size={24} activeColor="#ffd700" />
+            <p>({game.rating})</p>
           </div>
+          <p>{game.year}</p>
+          <h1>{game.genres}</h1>
+    
+          <Link
+            to={`/review/${game._id}`}
+            className="btn bg-purple-500 rounded-none text-white mt-3"
+          >
+            Explore Details
+          </Link>
+        </div>
         ))}
       </div>
     </div>
