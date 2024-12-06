@@ -26,6 +26,7 @@ const ReviewDetails = () => {
     const{_id, ...newReview}= {
       ...review,
       email: user.email,
+      username: user.displayName
     }
     fetch("http://localhost:5000/myWatchlist", {
       method: "POST",
