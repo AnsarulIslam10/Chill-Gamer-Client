@@ -48,23 +48,23 @@ const AddReview = () => {
   };
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen flex justify-center items-center"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/Bnz6mh0/pubg-mobile-game-image-5.jpg)`,
+        backgroundImage: `url(https://i.ibb.co.com/WWzQDDT/6436983-3312919.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-7xl px-2 mx-auto py-16">
-        <div className="card w-full  max-w-3xl backdrop-blur-md shadow-lg mx-auto shrink-0">
+      <div className="max-w-7xl flex-1 px-2 mx-aut0 py-16">
+        <div className="card w-full max-w-3xl backdrop-blur-sm shadow-lg mx-auto shrink-0">
           <form onSubmit={handleAddReview} className="card-body shadow-lg">
-            <h2 className="text-4xl font-bold text-white text-center">
+            <h2 className="text-4xl font-bold text-black text-center">
               Add Your Game Review
             </h2>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text text-black text-lg">
                   Game Title
                 </span>
               </label>
@@ -78,7 +78,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text text-black text-lg">
                   Game Cover Image
                 </span>
               </label>
@@ -92,7 +92,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">Rating</span>
+                <span className="label-text text-black text-lg">Rating</span>
               </label>
               <input
                 type="number"
@@ -107,7 +107,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text text-black text-lg">
                   Publishing Year
                 </span>
               </label>
@@ -121,7 +121,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">Genres</span>
+                <span className="label-text text-black text-lg">Genres</span>
               </label>
               <select
                 className="select select-bordered w-full"
@@ -138,7 +138,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">User Name</span>
+                <span className="label-text text-black text-lg">User Name</span>
               </label>
               <input
                 type="text"
@@ -152,7 +152,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text text-black text-lg">
                   User Email
                 </span>
               </label>
@@ -168,7 +168,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text text-black text-lg">
                   Review Description
                 </span>
               </label>
