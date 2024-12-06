@@ -30,8 +30,7 @@ const AllReviews = () => {
       <div className="text-center mt-6 mb-12">
         <h2 className="text-3xl font-semibold">All Reviews</h2>
         <p>
-          Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus
-          inventore error
+        Discover honest opinions and ratings for all games.
         </p>
       </div>
       <div className="flex justify-end gap-3 mb-3">

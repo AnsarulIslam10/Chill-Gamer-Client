@@ -42,7 +42,7 @@ const ReviewDetails = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-2 mb-32 mt-32">
-      <div className="flex items-center max-w-5xl mx-auto justify-center gap-12 border p-12 shadow-lg">
+      <div className="flex sm:items-center flex-col sm:flex-row max-w-5xl mx-auto justify-center gap-12 border p-4 sm:p-8 md:p-12 shadow-lg">
       <div>
         <img className="w-[500px]" src={cover} alt="" />
       </div>
@@ -57,13 +57,13 @@ const ReviewDetails = () => {
           />
           <p>({rating})</p>
         </div>
-        <p className="btn btn-xs btn-ghost btn-outline border-green-600 rounded-full text-green-600 mb-3">{genres}</p>
-        <p><span>Year: </span>{year}</p>
-        <p><span>Review: </span>{description}</p>
+        <p className="btn btn-xs btn-ghost btn-outline border-green-600 rounded-full text-green-600 mb-2">{genres}</p>
+        <p><span className="font-semibold">Release Year: </span>{year}</p>
+        <p><span className="font-semibold">Review: </span>{description}</p>
         <h3 className="mt-2 text-lg font-medium">reviewer’s info:</h3>
         <div className="bg-purple-50 p-2 mb-2">
-            <p>Name: {username}</p>
-            <p>Email: {email}</p>
+            <p><span className="font-semibold">Name:</span> {username}</p>
+            <p><span className="font-semibold">Email:</span> {email}</p>
         </div>
         <div>
             <button onClick={handleAddToWatchlist} className="btn bg-purple-500 rounded-none text-white">
