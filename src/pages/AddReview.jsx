@@ -111,7 +111,7 @@ const AddReview = () => {
                 </span>
               </label>
               <input
-                type="text"
+                type="number"
                 name="year"
                 placeholder="Game release year"
                 className="input input-bordered"

@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
-import { FaSort } from "react-icons/fa6";
 
 const AllReviews = () => {
   const loadedReviews = useLoaderData();

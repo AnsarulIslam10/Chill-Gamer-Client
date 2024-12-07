@@ -46,7 +46,7 @@ const Register = () => {
   };
   return (
     <div
-      className="flex justify-center items-center min-h-[80vh]"
+      className="flex justify-center items-center min-h-screen"
       style={{
         backgroundImage: `url(https://i.ibb.co.com/84K6pWN/register-bg.jpg)`,
         backgroundPosition: "center",
@@ -54,7 +54,7 @@ const Register = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="w-[700px] flex shadow-xl rounded-2xl px-2 overflow-hidden">
+      <div className="w-[700px] mb-96 pt-16 flex shadow-xl rounded-2xl px-2 overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div
             className="flex flex-col items-center h-full"

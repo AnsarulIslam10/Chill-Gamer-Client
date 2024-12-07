@@ -80,7 +80,7 @@ const ReviewDetails = () => {
             />
             <p>({rating})</p>
           </div>
-          <h3 className="mt-2 text-lg font-medium">reviewer’s info:</h3>
+          <h3 className="mt-2 text-lg font-medium">Reviewer’s info:</h3>
           <div className="bg-purple-50 dark:bg-purple-200 dark:text-[#2b2727] p-2 mb-2">
             <p>
               <span className="font-semibold">Name:</span> {username}

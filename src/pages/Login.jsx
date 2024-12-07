@@ -13,7 +13,6 @@ const Login = () => {
   const location = useLocation()
   const navigate = useNavigate()
 
-
   const handleLogin = (e)=>{
     e.preventDefault();
     const email = e.target.email.value;
@@ -65,7 +64,7 @@ const Login = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="w-[700px] px-2 flex shadow-xl rounded-2xl overflow-hidden">
+      <div className="w-[700px] mb-96 pt-16 px-2 flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div
             className="flex flex-col items-center h-full"

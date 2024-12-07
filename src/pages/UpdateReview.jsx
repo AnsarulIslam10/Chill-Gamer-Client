@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
 
 const UpdateReview = () => {
   const review = useLoaderData();
+  const navigate = useNavigate()
   const { user } = useContext(AuthContext);
   const {
     _id,
@@ -54,6 +55,7 @@ const UpdateReview = () => {
             icon: "success",
             confirmButtonText: "Close",
           });
+          navigate('/myReviews')
         }
       });
   };
@@ -126,7 +128,7 @@ const UpdateReview = () => {
                 </span>
               </label>
               <input
-                type="text"
+                type="number"
                 defaultValue={year}
                 name="year"
                 placeholder="Please enter game name"

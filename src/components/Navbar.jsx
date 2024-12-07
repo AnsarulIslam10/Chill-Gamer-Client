@@ -2,26 +2,23 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
-import { Tooltip } from 'react-tooltip'
-import 'react-tooltip/dist/react-tooltip.css'
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
+  const [theme, setTheme] = useState("light");
 
-  const [theme, setTheme] = useState('light');
-
-  useEffect(()=>{
-    const storedTheme = localStorage.getItem('theme') || 'light';
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || "light";
     setTheme(storedTheme);
-    document.body.classList.add(storedTheme)
+    document.body.classList.add(storedTheme);
   }, []);
-  
-  const toggleTheme = ()=>{
-    const updatedTheme = theme === 'light' ? 'dark' : 'light';
-    setTheme(updatedTheme)
-    localStorage.setItem('theme', updatedTheme);
-    document.body.className = updatedTheme
-  }
+
+  const toggleTheme = () => {
+    const updatedTheme = theme === "light" ? "dark" : "light";
+    setTheme(updatedTheme);
+    localStorage.setItem("theme", updatedTheme);
+    document.body.className = updatedTheme;
+  };
 
   const handleLogOut = () => {
     signOutUser();
@@ -30,26 +27,65 @@ const Navbar = () => {
   const links = (
     <>
       <li>
-        <NavLink to={"/"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>Home</NavLink>
+        <NavLink
+          to={"/"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
+              isActive ? "bg-purple-500 text-white" : ""
+            }`
+          }
+        >
+          Home
+        </NavLink>
       </li>
       <li>
-        <NavLink to={"/reviews"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>All Reviews</NavLink>
+        <NavLink
+          to={"/reviews"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
+              isActive ? "bg-purple-500 text-white" : ""
+            }`
+          }
+        >
+          All Reviews
+        </NavLink>
       </li>
-      {user && user?.email ? (
-        <>
-          <li>
-            <NavLink to={"/addReview"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>ADD Review</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/myReviews"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>My Review</NavLink>
-          </li>
-          <li>
-            <NavLink to={"/myWatchlist"} className={({isActive})=> `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${isActive ? 'bg-purple-500 text-white' : ""}`}>Game WatchList</NavLink>
-          </li>
-        </>
-      ) : (
-        ""
-      )}
+      <li>
+        <NavLink
+          to={"/addReview"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
+              isActive ? "bg-purple-500 text-white" : ""
+            }`
+          }
+        >
+          ADD Review
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/myReviews"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
+              isActive ? "bg-purple-500 text-white" : ""
+            }`
+          }
+        >
+          My Review
+        </NavLink>
+      </li>
+      <li>
+        <NavLink
+          to={"/myWatchlist"}
+          className={({ isActive }) =>
+            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
+              isActive ? "bg-purple-500 text-white" : ""
+            }`
+          }
+        >
+          Game WatchList
+        </NavLink>
+      </li>
     </>
   );
   return (
@@ -67,21 +103,23 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">Chill Gamer</a>
+          <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
+            Chill Gamer
+          </a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
           <button onClick={toggleTheme} className="btn btn-sm btn-circle mr-2">
-            {theme === 'light'? <FaMoon /> : <FaSun/>}
+            {theme === "light" ? <FaMoon /> : <FaSun />}
           </button>
           {user && user?.email ? (
             <div className="flex items-center">
               <div
                 className="flex items-center cursor-pointer px-1"
                 data-tooltip-id="my-tooltip"
-                  data-tooltip-place="bottom"
+                data-tooltip-place="bottom"
                 data-tooltip-content={user.displayName}
               >
                 <img
@@ -90,7 +128,6 @@ const Navbar = () => {
                   alt=""
                 />
               </div>
-                <Tooltip id="my-tooltip" className="z-10" />
               <button
                 onClick={handleLogOut}
                 className="btn btn-sm sm:btn-md bg-purple-500 border-none rounded-none text-white"
@@ -101,17 +138,17 @@ const Navbar = () => {
           ) : (
             <div>
               <Link
-              to={"/login"}
-              className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-purple-500 rounded-none text-white"
-            >
-              Login
-            </Link>
+                to={"/login"}
+                className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-purple-500 rounded-none text-white"
+              >
+                Login
+              </Link>
               <Link
-              to={"/register"}
-              className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
-            >
-              Register
-            </Link>
+                to={"/register"}
+                className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
+              >
+                Register
+              </Link>
             </div>
           )}
         </div>
