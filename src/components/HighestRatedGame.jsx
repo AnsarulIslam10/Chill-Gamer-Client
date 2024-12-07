@@ -28,7 +28,7 @@ const HighestRatedGame = () => {
     
           <Link
             to={`/review/${game._id}`}
-            className="btn bg-purple-500 font-orbitron border-none rounded-none text-white mt-3"
+            className="btn bg-purple-500 border-none rounded-none text-white mt-3"
           >
             Explore Details
           </Link>

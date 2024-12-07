@@ -59,18 +59,17 @@ const UpdateReview = () => {
   };
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/WWzQDDT/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/PZGBmRW/19852469-6193217.jpg')]"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/Bnz6mh0/pubg-mobile-game-image-5.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-7xl px-2 mx-auto py-16">
-        <div className="card w-full  max-w-3xl backdrop-blur-md shadow-lg mx-auto shrink-0">
-          <form onSubmit={handleUpdateReview} className="card-body shadow-lg">
-            <h2 className="text-4xl font-bold text-white text-center">
+      <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
+        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
+          <form onSubmit={handleUpdateReview} className="card-body text-black shadow-lg">
+            <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 dark:text-white font-orbitron font-bold">
               Update Your Game Review
             </h2>
             <div className="form-control">
