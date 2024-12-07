@@ -51,8 +51,8 @@ const Register = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="w-[700px] flex shadow-xl rounded-2xl overflow-hidden">
-        <div className="w-1/2 flex flex-col justify-between">
+      <div className="w-[700px] flex shadow-xl rounded-2xl px-2 overflow-hidden">
+        <div className="hidden sm:block w-1/2">
           <div
             className="flex flex-col items-center h-full"
             style={{
@@ -64,8 +64,8 @@ const Register = () => {
           ></div>
         </div>
 
-        <div className="w-1/2  p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
-          <h2 className="text-white text-2xl font-bold text-center mb-6">
+        <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
+          <h2 className="text-white font-orbitron text-2xl font-bold text-center mb-6">
             REGISTER
           </h2>
           <form onSubmit={handleRegister} className="space-y-2">

@@ -52,7 +52,7 @@ const Login = () => {
 
   return (
     <div
-      className="flex justify-center items-center min-h-[80vh] bg-red-400"
+      className="flex justify-center items-center min-h-screen"
       style={{
         backgroundImage: `url(https://i.ibb.co.com/84K6pWN/register-bg.jpg)`,
         backgroundPosition: "center",
@@ -60,8 +60,8 @@ const Login = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="w-[700px] flex shadow-xl rounded-2xl overflow-hidden">
-        <div className="w-1/2 flex flex-col justify-between">
+      <div className="w-[700px] px-2 flex shadow-xl rounded-2xl overflow-hidden">
+        <div className="hidden sm:block w-1/2">
           <div
             className="flex flex-col items-center h-full"
             style={{
@@ -73,8 +73,8 @@ const Login = () => {
           ></div>
         </div>
 
-        <div className="w-1/2  p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
-          <h2 className="text-white text-2xl font-bold text-center mb-6">
+        <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
+          <h2 className="text-white text-2xl font-bold text-center font-orbitron mb-6">
             LOGIN
           </h2>
           <div className="flex justify-center gap-4 mb-4">
