@@ -48,23 +48,22 @@ const AddReview = () => {
   };
   return (
     <div
-      className="min-h-screen flex justify-center items-center"
+      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/WWzQDDT/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/PZGBmRW/19852469-6193217.jpg')]"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/WWzQDDT/6436983-3312919.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
       }}
     >
-      <div className="max-w-7xl flex-1 px-2 mx-aut0 py-16">
-        <div className="card w-full max-w-3xl backdrop-blur-sm shadow-lg mx-auto shrink-0">
+      <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
+        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
           <form onSubmit={handleAddReview} className="card-body text-black shadow-lg">
-            <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 font-orbitron font-bold">
+            <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 dark:text-white font-orbitron font-bold">
               Add Your Game Review
             </h2>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">
+                <span className="label-text text-black dark:text-white text-lg">
                   Game Title
                 </span>
               </label>
@@ -78,7 +77,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">
+                <span className="label-text text-black dark:text-white text-lg">
                   Game Cover Image
                 </span>
               </label>
@@ -92,7 +91,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">Rating</span>
+                <span className="label-text text-black dark:text-white text-lg">Rating</span>
               </label>
               <input
                 type="number"
@@ -107,7 +106,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">
+                <span className="label-text text-black dark:text-white text-lg">
                   Publishing Year
                 </span>
               </label>
@@ -121,7 +120,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">Genres</span>
+                <span className="label-text text-black dark:text-white text-lg">Genres</span>
               </label>
               <select
                 className="select select-bordered w-full"
@@ -138,7 +137,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">User Name</span>
+                <span className="label-text text-black dark:text-white text-lg">User Name</span>
               </label>
               <input
                 type="text"
@@ -152,7 +151,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">
+                <span className="label-text text-black dark:text-white text-lg">
                   User Email
                 </span>
               </label>
@@ -168,7 +167,7 @@ const AddReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-black text-lg">
+                <span className="label-text text-black dark:text-white text-lg">
                   Review Description
                 </span>
               </label>
