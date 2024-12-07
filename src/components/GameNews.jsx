@@ -15,10 +15,9 @@ const GameNews = () => {
       </h2>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
         {gameNews.map((news, idx) => (
-            <Fade key={news._id} direction={idx % 2 === 0 ? 'right':'left'}>
-
-          <GameNewsCard news={news}></GameNewsCard>
-            </Fade>
+          <Fade key={news._id} direction={idx % 2 === 0 ? "right" : "left"} duration={1000} triggerOnce={true}>
+            <GameNewsCard news={news}></GameNewsCard>
+          </Fade>
         ))}
       </div>
     </div>

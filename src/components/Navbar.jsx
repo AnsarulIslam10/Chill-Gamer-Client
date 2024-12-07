@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from "react";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa6";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
+import { Zoom, Slide } from "react-awesome-reveal";
 const Navbar = () => {
   const { user, signOutUser } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -25,7 +26,7 @@ const Navbar = () => {
     navigate("/");
   };
   const links = (
-    <>
+    <Zoom>
       <li>
         <NavLink
           to={"/"}
@@ -86,7 +87,7 @@ const Navbar = () => {
           Game WatchList
         </NavLink>
       </li>
-    </>
+    </Zoom>
   );
   return (
     <nav className="max-w-7xl px-2 mx-auto sticky top-0 z-50">
@@ -103,9 +104,11 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
-            Chill Gamer
-          </a>
+          <Slide>
+            <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
+              Chill Gamer
+            </a>
+          </Slide>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
@@ -115,41 +118,45 @@ const Navbar = () => {
             {theme === "light" ? <FaMoon /> : <FaSun />}
           </button>
           {user && user?.email ? (
-            <div className="flex items-center">
-              <div
-                className="flex items-center cursor-pointer px-1"
-                data-tooltip-id="my-tooltip"
-                data-tooltip-place="bottom"
-                data-tooltip-content={user.displayName}
-              >
-                <img
-                  className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1 mr-2"
-                  src={user?.photoURL}
-                  alt=""
-                />
+            <Slide direction="right">
+              <div className="flex items-center">
+                <div
+                  className="flex items-center cursor-pointer px-1"
+                  data-tooltip-id="my-tooltip"
+                  data-tooltip-place="bottom"
+                  data-tooltip-content={user.displayName}
+                >
+                  <img
+                    className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1 mr-2"
+                    src={user?.photoURL}
+                    alt=""
+                  />
+                </div>
+                <button
+                  onClick={handleLogOut}
+                  className="btn btn-sm sm:btn-md bg-purple-500 border-none rounded-none text-white"
+                >
+                  Log Out
+                </button>
               </div>
-              <button
-                onClick={handleLogOut}
-                className="btn btn-sm sm:btn-md bg-purple-500 border-none rounded-none text-white"
-              >
-                Log Out
-              </button>
-            </div>
+            </Slide>
           ) : (
-            <div>
-              <Link
-                to={"/login"}
-                className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-purple-500 rounded-none text-white"
-              >
-                Login
-              </Link>
-              <Link
-                to={"/register"}
-                className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
-              >
-                Register
-              </Link>
-            </div>
+            <Slide direction="right">
+              <div>
+                <Link
+                  to={"/login"}
+                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-purple-500 rounded-none text-white"
+                >
+                  Login
+                </Link>
+                <Link
+                  to={"/register"}
+                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
+                >
+                  Register
+                </Link>
+              </div>
+            </Slide>
           )}
         </div>
       </div>

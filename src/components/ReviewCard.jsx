@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ReviewCard = ({ review }) => {
   const { _id, name, cover, rating, year, genres } = review;
   return (
-    <div className="flex flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
+    <div className="flex h-[100%] flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
       <img className="mb-3" src={cover} alt="" />
       <h2 className="text-2xl font-semibold">{name}</h2>
       <div className="flex items-center">

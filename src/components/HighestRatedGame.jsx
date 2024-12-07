@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import ReactStars from "react-rating-stars-component";
 import { Link } from "react-router-dom";
+import { Zoom } from "react-awesome-reveal";
 const HighestRatedGame = () => {
   const [games, setGames] = useState([]);
   useEffect(() => {
@@ -16,7 +17,8 @@ const HighestRatedGame = () => {
       <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
         {/* card */}
         {games.map((game) => (
-          <div className="flex flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
+          <Zoom key={game._id}  duration={1000} triggerOnce={true}>
+          <div className="flex h-[100%] flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
           <img className="mb-3" src={game.cover} alt="" />
           <h2 className="text-2xl font-semibold">{game.name}</h2>
           <div className="flex items-center">
@@ -29,10 +31,11 @@ const HighestRatedGame = () => {
           <Link
             to={`/review/${game._id}`}
             className="btn bg-purple-500 border-none rounded-none text-white mt-3"
-          >
+            >
             Explore Details
           </Link>
         </div>
+        </Zoom>
         ))}
       </div>
     </div>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
-
+import { Fade } from "react-awesome-reveal";
 const AllReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
@@ -71,8 +71,11 @@ const AllReviews = () => {
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-        {reviews.map((review) => (
-          <ReviewCard key={review._id} review={review}></ReviewCard>
+        {reviews.map((review, idx) => (
+          <Fade key={review._id} direction={idx % 2 === 0 ? "right" : "left"} duration={1000} triggerOnce={true} >
+
+          <ReviewCard  review={review}></ReviewCard>
+          </Fade>
         ))}
       </div>
     </div>
