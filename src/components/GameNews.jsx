@@ -9,8 +9,8 @@ const GameNews = () => {
         .then(data=>setGameNews(data))
     },[])
     return (
-        <div className='my-16'>
-            <h2 className="mb-8 text-center text-4xl font-bold" >Latest Game News</h2>
+        <div className='my-16 md:my-20'>
+            <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold" >Latest Game News</h2>
             <div className='grid grid-cols-1 sm:grid-cols-2 gap-6'>
                 {
                     gameNews.map(news => <GameNewsCard key={news._id} news={news}></GameNewsCard>)

@@ -3,6 +3,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import ReactStars from "react-rating-stars-component";
 import { FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
+import Loading from "./Loading";
 const GameWatchlist = () => {
   const { user } = useContext(AuthContext);
   const [myWatchlist, setMyWatchlist] = useState([]);
@@ -45,10 +46,15 @@ const GameWatchlist = () => {
   };
 
   if (!myWatchlist || myWatchlist.length === 0) {
-    return <p>No Reviews found.</p>;
+    return (
+      <div className="flex min-h-[60vh] justify-center items-center">
+        <p className="text-3xl font-semibold font-orbitron text-red-400">No Games found.</p>
+      </div>
+    );
   }
   return (
     <div className="max-w-7xl mx-auto px-2 my-16">
+      <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">My Game Watchlist</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}

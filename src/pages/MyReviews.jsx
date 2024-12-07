@@ -9,14 +9,20 @@ const MyReviews = () => {
   const [myReviews, setMyReviews] = useState([]);
 
   useEffect(() => {
-    fetch(`https://chill-gamer-server-tau.vercel.app/myReviews?email=${user.email}`)
+    fetch(
+      `https://chill-gamer-server-tau.vercel.app/myReviews?email=${user.email}`
+    )
       .then((res) => res.json())
       .then((data) => setMyReviews(data))
       .catch((err) => console.log(err));
   }, [user]);
 
   if (!myReviews || myReviews.length === 0) {
-    return <p>No Reviews found.</p>;
+    return (
+      <div className="flex min-h-[60vh] justify-center items-center">
+        <p className="text-3xl font-semibold font-orbitron text-red-400">No Review found.</p>
+      </div>
+    );
   }
 
   const handleDelete = (id) => {
@@ -41,7 +47,9 @@ const MyReviews = () => {
                 text: "Your review has been deleted.",
                 icon: "success",
               });
-              const remainingReviews = myReviews.filter((reviews) => reviews._id !== id);
+              const remainingReviews = myReviews.filter(
+                (reviews) => reviews._id !== id
+              );
               setMyReviews(remainingReviews);
             }
           });
@@ -50,7 +58,8 @@ const MyReviews = () => {
   };
 
   return (
-    <div className="max-w-7xl mx-auto px-2 my-32">
+    <div className="max-w-7xl mx-auto px-2 my-16">
+      <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">My Review</h2>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
@@ -66,16 +75,25 @@ const MyReviews = () => {
           <tbody>
             {/* row 1 */}
             {myReviews.map((review, idx) => (
-              <tr key={review._id} className="hover dark:hover:text-black dark:border-gray-500">
+              <tr
+                key={review._id}
+                className="hover dark:hover:text-black dark:border-gray-500"
+              >
                 <th>{idx + 1}</th>
                 <td>{review.username}</td>
                 <td>{review.name}</td>
                 <td>{review.genres}</td>
                 <td className="text-center flex flex-col justify-center sm:flex-row">
-                  <Link to={`/updateReview/${review._id}`} className="btn btn-sm sm:btn-md btn-circle border-none mr-2 bg-purple-500 text-white">
+                  <Link
+                    to={`/updateReview/${review._id}`}
+                    className="btn btn-sm sm:btn-md btn-circle border-none mr-2 bg-purple-500 text-white"
+                  >
                     <FaPen />
                   </Link>
-                  <button onClick={()=>handleDelete(review._id)} className="btn btn-sm sm:btn-md btn-circle border-none bg-red-500 text-white">
+                  <button
+                    onClick={() => handleDelete(review._id)}
+                    className="btn btn-sm sm:btn-md btn-circle border-none bg-red-500 text-white"
+                  >
                     <FaTrash />
                   </button>
                 </td>

@@ -27,7 +27,7 @@ const AllReviews = () => {
   return (
     <div className="max-w-7xl px-2 my-16 mx-auto">
       <div className="text-center mt-6 mb-12">
-        <h2 className="text-3xl font-semibold">All Reviews</h2>
+        <h2 className="mb-3 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">All Reviews</h2>
         <p>
         Discover honest opinions and ratings for all games.
         </p>

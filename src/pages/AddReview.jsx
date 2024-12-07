@@ -58,8 +58,8 @@ const AddReview = () => {
     >
       <div className="max-w-7xl flex-1 px-2 mx-aut0 py-16">
         <div className="card w-full max-w-3xl backdrop-blur-sm shadow-lg mx-auto shrink-0">
-          <form onSubmit={handleAddReview} className="card-body shadow-lg">
-            <h2 className="text-4xl font-bold text-black text-center">
+          <form onSubmit={handleAddReview} className="card-body text-black shadow-lg">
+            <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 font-orbitron font-bold">
               Add Your Game Review
             </h2>
             <div className="form-control">

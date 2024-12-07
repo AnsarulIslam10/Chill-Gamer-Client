@@ -9,8 +9,8 @@ const TrendingGames = () => {
         .then(data=>setTrendingGames(data))
     },[])
     return (
-        <div className='my-16'>
-            <h2 className='text-center text-4xl underline underline-offset-[10px] font-semibold mb-8'>Trending Games</h2>
+        <div className='my-16 md:my-20'>
+            <h2 className='mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold'>Trending Games</h2>
             <Marquee speed={120}>
             <div className='flex gap-2'>
                 {

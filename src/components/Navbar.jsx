@@ -57,7 +57,7 @@ const Navbar = () => {
       <div className="navbar bg-base-100 dark:bg-[#181818] dark:text-[#e0e0e0] px-0">
         <div className="navbar-start">
           <div className="dropdown">
-            <div tabIndex={0} role="button" className="mr-4 text-xl lg:hidden">
+            <div tabIndex={0} role="button" className="mr-1 text-xl lg:hidden">
               <FaBars />
             </div>
             <ul
@@ -67,7 +67,7 @@ const Navbar = () => {
               {links}
             </ul>
           </div>
-          <a className="font-bold px-0 text-purple-600 sm:text-2xl">Chill Gamer</a>
+          <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">Chill Gamer</a>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
