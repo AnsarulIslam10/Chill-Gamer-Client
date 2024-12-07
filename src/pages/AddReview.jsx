@@ -128,9 +128,11 @@ const AddReview = () => {
                 id=""
               >
                 <option value="Action">Action</option>
+                <option value="Adventure">Adventure</option>
                 <option value="RPG">RPG</option>
                 <option value="FPS">FPS</option>
-                <option value="Adventure">Adventure</option>
+                <option value="TPS">TPS</option>
+                <option value="Sports">Sports</option>
                 <option value="Survival">Survival</option>
                 <option value="Horror">Horror</option>
               </select>

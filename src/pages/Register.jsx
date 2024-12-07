@@ -1,11 +1,13 @@
 import React, { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
+  const location = useLocation()
+  const navigate = useNavigate()
   const [error, setError] = useState("");
   const [showPassword, setShowPassword] = useState(false);
   const handleRegister = (e) => {
@@ -36,6 +38,7 @@ const Register = () => {
         setUser(user);
         updateUserProfile({displayName: name, photoURL: photo})
         toast.success("Registration successfull");
+        navigate(location?.state ? location.state : "/")
       })
       .catch((err) => {
         toast.error(err.message);
