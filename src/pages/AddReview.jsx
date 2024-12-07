@@ -70,7 +70,7 @@ const AddReview = () => {
               <input
                 type="text"
                 name="name"
-                placeholder="Please enter game name"
+                placeholder="Enter game name"
                 className="input input-bordered"
                 required
               />
@@ -84,7 +84,7 @@ const AddReview = () => {
               <input
                 type="text"
                 name="cover"
-                placeholder="Please enter game cover image"
+                placeholder="Enter game cover image url"
                 className="input input-bordered"
                 required
               />
@@ -113,7 +113,7 @@ const AddReview = () => {
               <input
                 type="text"
                 name="year"
-                placeholder="Please enter game name"
+                placeholder="Game release year"
                 className="input input-bordered"
                 required
               />
