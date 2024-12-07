@@ -9,7 +9,7 @@ const GameNewsCard = ({ news }) => {
     setIsExpanded(!isExpanded);
   };
   return (
-    <div className="border dark:border-gray-500 p-6">
+    <div className="border dark:border-gray-500 h-[100%] p-6">
       <img src={news.image} alt="" />
       <div className="flex justify-between items-center mt-1">
       <p className="text-gray-400 text-sm flex gap-1"><FaCalendarAlt className="mt-[1.5px]"/>{news.date}</p>
