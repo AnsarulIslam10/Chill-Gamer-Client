@@ -4,16 +4,16 @@ import { FcGoogle } from "react-icons/fc";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
-
+import { Helmet } from "react-helmet-async";
 const Login = () => {
-  const {signInUser, signInWithGoogle} = useContext(AuthContext);
+  const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
   const [error, setError] = useState("");
 
-  const location = useLocation()
-  const navigate = useNavigate()
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  const handleLogin = (e)=>{
+  const handleLogin = (e) => {
     e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
@@ -35,24 +35,23 @@ const Login = () => {
     signInUser(email, password)
       .then((result) => {
         toast.success("Login successful");
-        navigate(location?.state ? location.state : "/")
+        navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
         toast.error(err.message);
       });
-    
-  }
+  };
 
-  const handleGoogleSignIn=()=>{
+  const handleGoogleSignIn = () => {
     signInWithGoogle()
-    .then(result=>{
-      toast.success('Login Successfull');
-      navigate(location?.state ? location.state : "/")
-    })
-    .catch(err=>{
-      toast.error(err.message)
-    })
-  }
+      .then((result) => {
+        toast.success("Login Successfull");
+        navigate(location?.state ? location.state : "/");
+      })
+      .catch((err) => {
+        toast.error(err.message);
+      });
+  };
 
   return (
     <div
@@ -64,6 +63,9 @@ const Login = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Helmet>
+        <title>Chill Gamer | Login</title>
+      </Helmet>
       <div className="w-[700px] mb-96 pt-16 px-2 flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div
@@ -82,7 +84,10 @@ const Login = () => {
             LOGIN
           </h2>
           <div className="flex justify-center gap-4 mb-4">
-            <a onClick={handleGoogleSignIn} className="btn btn-circle btn-ghost text-5xl hover:scale-105 transition-all duration-300 text-white">
+            <a
+              onClick={handleGoogleSignIn}
+              className="btn btn-circle btn-ghost text-5xl hover:scale-105 transition-all duration-300 text-white"
+            >
               <FcGoogle />
             </a>
           </div>

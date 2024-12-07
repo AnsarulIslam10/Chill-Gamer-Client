@@ -4,6 +4,7 @@ import ReactStars from "react-rating-stars-component";
 import { FaHeart } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import { AuthContext } from "../providers/AuthProvider";
+import { Helmet } from 'react-helmet-async';
 const ReviewDetails = () => {
   const loadedReview = useLoaderData();
   const [review, setReview] = useState(loadedReview);
@@ -48,6 +49,9 @@ const ReviewDetails = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-2 mb-32 mt-32">
+      <Helmet>
+        <title>Chill Gamer | Review Details</title>
+      </Helmet>
       <div className="flex sm:items-center flex-col sm:flex-row max-w-5xl mx-auto justify-center gap-12 border dark:border-gray-500 p-4 sm:p-8 md:p-12 shadow-lg">
         <div>
           <img className="w-[500px]" src={cover} alt="" />

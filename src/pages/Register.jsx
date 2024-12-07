@@ -3,7 +3,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
-
+import { Helmet } from 'react-helmet-async';
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
   const location = useLocation()
@@ -54,6 +54,9 @@ const Register = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Helmet>
+        <title>Chill Gamer | Register</title>
+      </Helmet>
       <div className="w-[700px] mb-96 pt-16 flex shadow-xl rounded-2xl px-2 overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div

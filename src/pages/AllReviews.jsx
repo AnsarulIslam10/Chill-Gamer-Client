@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
 import { Fade } from "react-awesome-reveal";
+import { Helmet } from 'react-helmet-async';
 const AllReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
@@ -25,6 +26,9 @@ const AllReviews = () => {
   }
   return (
     <div className="max-w-7xl px-2 my-16 mx-auto">
+      <Helmet>
+        <title>Chill Gamer | All Reviews</title>
+      </Helmet>
       <div className="text-center mt-6 mb-12">
         <h2 className="mb-3 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">All Reviews</h2>
         <p>

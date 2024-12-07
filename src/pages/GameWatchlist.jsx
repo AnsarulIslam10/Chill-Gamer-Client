@@ -4,24 +4,24 @@ import ReactStars from "react-rating-stars-component";
 import { FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import Loading from "./Loading";
-
+import { Helmet } from "react-helmet-async";
 const GameWatchlist = () => {
   const { user } = useContext(AuthContext);
   const [myWatchlist, setMyWatchlist] = useState([]);
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(true);
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     fetch(
       `https://chill-gamer-server-tau.vercel.app/myWatchlist?email=${user?.email}`
     )
       .then((res) => res.json())
       .then((data) => {
-        setMyWatchlist(data)
-        setLoading(false)
+        setMyWatchlist(data);
+        setLoading(false);
       })
       .catch((err) => {
-        console.log(err)
-        setLoading(false)
+        console.log(err);
+        setLoading(false);
       });
   }, [user]);
 
@@ -58,7 +58,7 @@ const GameWatchlist = () => {
   };
 
   if (loading) {
-    return <Loading></Loading>
+    return <Loading></Loading>;
   }
 
   if (!myWatchlist || myWatchlist.length === 0) {
@@ -72,6 +72,9 @@ const GameWatchlist = () => {
   }
   return (
     <div className="max-w-7xl mx-auto px-2 my-16">
+      <Helmet>
+        <title>Chill Gamer | Game Watchlist</title>
+      </Helmet>
       <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">
         My Game Watchlist
       </h2>

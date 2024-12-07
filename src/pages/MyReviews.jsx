@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { FaPen, FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import Loading from "./Loading";
+import { Helmet } from 'react-helmet-async';
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
@@ -71,6 +72,9 @@ const MyReviews = () => {
 
   return (
     <div className="max-w-7xl mx-auto px-2 my-16">
+      <Helmet>
+        <title>Chill Gamer | My Review</title>
+      </Helmet>
       <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">
         My Review
       </h2>

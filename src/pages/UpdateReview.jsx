@@ -2,10 +2,10 @@ import React, { useContext } from "react";
 import { useLoaderData, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
-
+import { Helmet } from "react-helmet-async";
 const UpdateReview = () => {
   const review = useLoaderData();
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   const { user } = useContext(AuthContext);
   const {
     _id,
@@ -55,7 +55,7 @@ const UpdateReview = () => {
             icon: "success",
             confirmButtonText: "Close",
           });
-          navigate('/myReviews')
+          navigate("/myReviews");
         }
       });
   };
@@ -68,9 +68,15 @@ const UpdateReview = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Helmet>
+        <title>Chill Gamer | Update Review</title>
+      </Helmet>
       <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
         <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
-          <form onSubmit={handleUpdateReview} className="card-body text-black shadow-lg">
+          <form
+            onSubmit={handleUpdateReview}
+            className="card-body text-black shadow-lg"
+          >
             <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 dark:text-white font-orbitron font-bold">
               Update Your Game Review
             </h2>

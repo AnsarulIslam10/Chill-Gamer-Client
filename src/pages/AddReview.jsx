@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
 import { AuthContext } from "../providers/AuthProvider";
 import Swal from "sweetalert2";
+import { Helmet } from 'react-helmet-async';
 const AddReview = () => {
   const { user } = useContext(AuthContext);
 
@@ -55,6 +56,9 @@ const AddReview = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
+      <Helmet>
+        <title>Chill Gamer | Add Review</title>
+      </Helmet>
       <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
         <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
           <form onSubmit={handleAddReview} className="card-body text-black shadow-lg">
