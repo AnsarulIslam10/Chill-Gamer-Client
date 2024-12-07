@@ -7,7 +7,10 @@ export default {
   ],
   theme: {
     extend: {
-      fontfami
+      fontFamily: {
+        'poppins': ["Poppins", "serif"],
+        'orbitron': ['Orbitron', "serif"]
+      },
     },
   },
   plugins: [require('daisyui'),],
