@@ -1,29 +1,27 @@
 import React, { useState } from "react";
 import { useLoaderData } from "react-router-dom";
 import ReviewCard from "../components/ReviewCard";
-import { Fade } from "react-awesome-reveal";
+import { Zoom } from "react-awesome-reveal";
 import { Helmet } from 'react-helmet-async';
 const AllReviews = () => {
   const loadedReviews = useLoaderData();
   const [reviews, setReviews] = useState(loadedReviews);
 
-  const handleSort = async (e)=>{
-    const sort = e.target.value;
-    const res = await fetch(`https://chill-gamer-server-tau.vercel.app/reviews/sortedReviews?sortBy=${sort}`)
-    const sortedReviews = await res.json()
-    setReviews(sortedReviews)
+  const handleSort = async(e)=>{
+    const sortBy = e.target.value;
+    const genre = document.getElementById('genre').value;
+    const res = await fetch(`https://chill-gamer-server-tau.vercel.app/reviews?genre=${genre}&sortBy=${sortBy}`)
+    const sortData = await res.json()
+    setReviews(sortData)
+  }
+  const handleFilter = async(e)=>{
+    const genre = e.target.value;
+    const sortBy= document.getElementById('sort').value;
+    const res = await fetch(`https://chill-gamer-server-tau.vercel.app/reviews?genre=${genre}&sortBy=${sortBy}`)
+    const filterData = await res.json()
+    setReviews(filterData)
   }
 
-  const handleFilter = (e)=>{
-    const genre = e.target.value;
-    if (genre === 'All') {
-      setReviews(loadedReviews);
-    }
-    else{
-      const filteredReviews = loadedReviews.filter(review=>review.genres === genre)
-      setReviews(filteredReviews);
-    }
-  }
   return (
     <div className="max-w-7xl px-2 my-16 mx-auto">
       <Helmet>
@@ -40,13 +38,13 @@ const AllReviews = () => {
           <select
             className="select select-bordered dark:bg-gray-600 rounded-none w-full"
             name="ratings"
-            id=""
+            id="genre"
             onChange={handleFilter}
           >
-            <option disabled selected>
+            <option disabled value="All" selected>
               Filter
             </option>
-            <option value="All">All</option>
+            {/* <option value="All" selected>All</option> */}
             <option value="Action">Action</option>
             <option value="Adventure">Adventure</option>
             <option value="RPG">RPG</option>
@@ -61,7 +59,7 @@ const AllReviews = () => {
           <select
             className="select select-bordered dark:bg-gray-600 rounded-none w-full"
             name="ratings"
-            id=""
+            id="sort"
             onChange={handleSort}
           >
             <option disabled selected>
@@ -76,10 +74,10 @@ const AllReviews = () => {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {reviews.map((review, idx) => (
-          <Fade key={review._id} direction={idx % 2 === 0 ? "right" : "left"} duration={1000} triggerOnce={true} >
+          <Zoom key={review._id} duration={500} triggerOnce={true} >
 
           <ReviewCard  review={review}></ReviewCard>
-          </Fade>
+          </Zoom>
         ))}
       </div>
     </div>
