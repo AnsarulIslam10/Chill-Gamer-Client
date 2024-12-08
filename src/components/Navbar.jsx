@@ -114,8 +114,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button onClick={toggleTheme} className="btn btn-sm btn-circle mr-2">
-            {theme === "light" ? <FaMoon /> : <FaSun />}
+          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle hover:bg-yellow-400 dark:hover:bg-blue-500 mr-2">
+            {theme === "light" ? <FaMoon className="text-blue-500" size={24} /> : <FaSun  className="text-yellow-400" size={24}/>}
           </button>
           {user && user?.email ? (
             <Slide direction="right">

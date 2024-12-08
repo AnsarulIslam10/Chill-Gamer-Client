@@ -3,7 +3,7 @@ import { FaFacebook, FaSteam, FaXTwitter } from "react-icons/fa6";
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#1d1d1d] py-20 dark:text-[#e0e0e0] p-10">
+    <footer className="dark:bg-[#1d1d1d] py-20 bg-[#f8f7f7] dark:text-[#e0e0e0] p-10">
       <section className="footer justify-between max-w-7xl px-2 mx-auto">
         <nav>
           <h6 className="text-3xl font-bold font-orbitron text-purple-500">Chill Gamer</h6>
