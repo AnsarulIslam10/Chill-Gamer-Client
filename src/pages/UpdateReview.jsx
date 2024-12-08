@@ -59,19 +59,12 @@ const UpdateReview = () => {
       });
   };
   return (
-    <div
-      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/1QYy1jS/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/sv5HV4F/19852469-6193217.jpg')]"
-      style={{
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="min-h-screen flex justify-center items-center">
       <Helmet>
         <title>Chill Gamer | Update Review</title>
       </Helmet>
       <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
-        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
+        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 border-cyan-100 border dark:border-none shadow-lg shadow-cyan-200 dark:shadow-none mx-auto shrink-0">
           <form
             onSubmit={handleUpdateReview}
             className="card-body text-black shadow-lg"
@@ -80,7 +73,8 @@ const UpdateReview = () => {
               Update Your Game Review
             </h2>
             <p className="text-sm text-center max-w-xl mx-auto mb-4 text-gray-500 dark:text-gray-400">
-            Update your review and share your latest thoughts to help others make informed decisions on their next game!
+              Update your review and share your latest thoughts to help others
+              make informed decisions on their next game!
             </p>
             <div className="form-control">
               <label className="label">
@@ -114,7 +108,9 @@ const UpdateReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text dark:text-white text-lg">Rating</span>
+                <span className="label-text dark:text-white text-lg">
+                  Rating
+                </span>
               </label>
               <input
                 type="number"
@@ -145,7 +141,9 @@ const UpdateReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text dark:text-white text-lg">Genres</span>
+                <span className="label-text dark:text-white text-lg">
+                  Genres
+                </span>
               </label>
               <select
                 className="select select-bordered rounded-none bg-transparent select-info dark:focus:bg-gray-800 dark:text-white w-full focus:outline-none"
@@ -165,7 +163,9 @@ const UpdateReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text dark:text-white text-lg">User Name</span>
+                <span className="label-text dark:text-white text-lg">
+                  User Name
+                </span>
               </label>
               <input
                 type="text"

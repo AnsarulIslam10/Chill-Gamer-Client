@@ -48,19 +48,12 @@ const AddReview = () => {
       });
   };
   return (
-    <div
-      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/1QYy1jS/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/sv5HV4F/19852469-6193217.jpg')]"
-      style={{
-        backgroundPosition: "center",
-        backgroundSize: "cover",
-        backgroundRepeat: "no-repeat",
-      }}
-    >
+    <div className="min-h-screen flex justify-center items-center">
       <Helmet>
         <title>Chill Gamer | Add Review</title>
       </Helmet>
       <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
-        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg mx-auto shrink-0">
+        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg border-cyan-100 border dark:border-none shadow-cyan-200 dark:shadow-none mx-auto shrink-0">
           <form
             onSubmit={handleAddReview}
             className="card-body text-black shadow-lg"

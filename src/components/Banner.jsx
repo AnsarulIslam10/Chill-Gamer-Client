@@ -21,14 +21,13 @@ const Banner = () => {
     loop: true,
   });
   const [text2] = useTypewriter({
-    words: ["Play." ,"Review.","Share."],
+    words: ["Play.", "Review.", "Share."],
     loop: true,
   });
   const [text3] = useTypewriter({
     words: ["Save favorites.", "Track new games.", "Build your collection."],
     loop: true,
   });
-  
 
   return (
     <>
@@ -48,13 +47,14 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="relative">
-          <img
-            src="https://i.ibb.co.com/hDkWm7y/ghost.jpg"
-            className="w-full"
-          />
-          <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
-           p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Explore All Reviews</h1>
+          <img src="https://i.ibb.co.com/hDkWm7y/ghost.jpg" />
+          <div
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
+           p-12 text-white bg-black bg-opacity-50"
+          >
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">
+              Explore All Reviews
+            </h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text1}_
               <FaQuoteRight className="text-gray-400" />
@@ -76,19 +76,23 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img
-            src="https://i.ibb.co.com/KWsBfdb/batman.jpg"
-            className="w-full"
-          />
-          <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
-           p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Add Review</h1>
+          <img src="https://i.ibb.co.com/KWsBfdb/batman.jpg" />
+          <div
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
+           p-12 text-white bg-black bg-opacity-50"
+          >
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">
+              Add Review
+            </h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text2}_
               <FaQuoteRight className="text-gray-400" />
             </h3>
             <p className="max-w-sm hidden sm:block text-center text-xs text-gray-400 sm:mt-2 sm:mb-2 md:mb-4 md:mt-4">
-            Got a gaming experience to share? Contribute your insights by adding your reviews. Your perspective helps others decide what to play next, while you become a valued voice in the gaming community!
+              Got a gaming experience to share? Contribute your insights by
+              adding your reviews. Your perspective helps others decide what to
+              play next, while you become a valued voice in the gaming
+              community!
             </p>
             <div>
               <Link
@@ -102,19 +106,22 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="relative">
           {" "}
-          <img
-            src="https://i.ibb.co.com/tCSJKp8/slider-image.jpg"
-            className="w-full"
-          />
-          <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
-           p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Game Watchlist</h1>
+          <img src="https://i.ibb.co.com/tCSJKp8/slider-image.jpg" />
+          <div
+            className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
+           p-12 text-white bg-black bg-opacity-50"
+          >
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">
+              Game Watchlist
+            </h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text3}_
               <FaQuoteRight className="text-gray-400" />
             </h3>
             <p className="max-w-sm hidden sm:block text-center text-xs text-gray-400 sm:mt-2 sm:mb-2 md:mb-4 md:mt-4">
-            Never lose track of the games you love. Build your personal watchlist to save favorites, track upcoming releases, and plan your next gaming adventure with ease.
+              Never lose track of the games you love. Build your personal
+              watchlist to save favorites, track upcoming releases, and plan
+              your next gaming adventure with ease.
             </p>
             <div>
               <Link
