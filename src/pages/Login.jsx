@@ -107,6 +107,7 @@ const Login = () => {
               <input
                 type="email"
                 name="email"
+                required
                 placeholder="Please enter your email"
                 className="input rounded-none input-bordered input-info bg-transparent text-white focus:outline-none"
               />
@@ -118,6 +119,7 @@ const Login = () => {
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
+                required
                 placeholder="Please enter your password"
                 className="input rounded-none input-bordered input-info  bg-transparent text-white focus:outline-none"
               />
