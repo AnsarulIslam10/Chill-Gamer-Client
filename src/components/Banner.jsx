@@ -76,7 +76,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img src="https://i.ibb.co.com/KWsBfdb/batman.jpg" />
+          <img src="https://i.ibb.co.com/TKKbkDB/batman-slider.jpg" />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50"
