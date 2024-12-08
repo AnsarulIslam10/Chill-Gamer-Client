@@ -4,10 +4,10 @@ import { Link } from "react-router-dom";
 
 const Footer = () => {
   return (
-    <footer className="dark:bg-[#1d1d1d] py-10 sm:py-16 md:py-20 bg-[#f8f7f7] dark:text-[#e0e0e0] p-6 sm:p-10">
+    <footer className="dark:bg-[#1d1d1d] py-10 sm:py-16 md:py-20 bg-cyan-50 dark:text-[#e0e0e0] p-6 sm:p-10">
       <section className="footer justify-between max-w-7xl px-2 mx-auto">
         <nav>
-          <h6 className="text-3xl font-bold font-orbitron text-purple-500">
+          <h6 className="text-3xl font-bold font-orbitron text-cyan-500">
             Chill Gamer
           </h6>
           <p className="w-60 mb-3 dark:text-gray-400 text-gray-500">
@@ -55,7 +55,7 @@ const Footer = () => {
                 placeholder="Enter your email"
                 className="input rounded-none w-40 lg:w-auto input-bordered join-item"
               />
-              <button className="btn bg-purple-500 border-none text-white rounded-none join-item">
+              <button className="btn bg-cyan-500 border-none text-white rounded-none join-item">
                 Subscribe
               </button>
             </div>

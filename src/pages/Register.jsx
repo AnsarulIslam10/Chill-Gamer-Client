@@ -74,7 +74,7 @@ const Register = () => {
         </div>
 
         <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
-          <h2 className="text-white font-orbitron text-2xl font-bold text-center mb-6">
+          <h2 className="text-cyan-400 font-orbitron text-2xl font-bold text-center mb-6">
             REGISTER
           </h2>
           <form onSubmit={handleRegister} className="space-y-2">
@@ -86,7 +86,7 @@ const Register = () => {
                 type="text"
                 name="name"
                 placeholder="Please enter your username"
-                className="input input-bordered input-info bg-transparent text-white focus:outline-none"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
@@ -98,7 +98,7 @@ const Register = () => {
                 type="text"
                 name="photo"
                 placeholder="Please enter your photo url"
-                className="input input-bordered input-info bg-transparent text-white focus:outline-none"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
@@ -110,7 +110,7 @@ const Register = () => {
                 type="email"
                 name="email"
                 placeholder="Please enter your email"
-                className="input input-bordered input-info bg-transparent text-white focus:outline-none"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
@@ -122,7 +122,7 @@ const Register = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Please enter your password"
-                className="input input-bordered input-info  bg-transparent text-white focus:outline-none"
+                className="input input-bordered rounded-none input-info  bg-transparent text-white focus:outline-none"
                 required
               />
               <p
@@ -137,11 +137,11 @@ const Register = () => {
                 </div>
               )}
             </div>
-            <button className="btn btn-primary w-full mt-4">Register</button>
+            <button className="btn bg-cyan-500 border-none text-white rounded-none w-full mt-4">Register</button>
           </form>
           <p className="text-center text-white mt-6">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-blue-200 hover:underline">
+            <Link to={"/login"} className="text-cyan-200 hover:underline">
               Login
             </Link>
           </p>

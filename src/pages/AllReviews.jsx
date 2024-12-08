@@ -31,17 +31,19 @@ const AllReviews = () => {
       <Helmet>
         <title>Chill Gamer | All Reviews</title>
       </Helmet>
-      <div className="text-center mt-6 mb-12">
-        <h2 className="mb-3 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">
+      <div className="text-center mt-6">
+        <h2 className="mb-2 text-center text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
           All Reviews
         </h2>
-        <p>Discover honest opinions and ratings for all games.</p>
+        <p class="text-sm text-center mb-4 text-gray-500 dark:text-gray-400">
+          Discover honest opinions and ratings for all games.
+        </p>
       </div>
-      <Slide direction="right">
+      <Slide direction="right" triggerOnce={true}>
         <div className="flex justify-end gap-3 mb-3">
           <div className="w-24">
             <select
-              className="select select-bordered dark:bg-gray-600 rounded-none w-full"
+              className="select select-bordered bg-transparent dark:border-gray-500 dark:focus:bg-gray-800 rounded-none w-full"
               name="ratings"
               id="genre"
               onChange={handleFilter}
@@ -62,7 +64,7 @@ const AllReviews = () => {
           </div>
           <div className="w-32">
             <select
-              className="select select-bordered dark:bg-gray-600 rounded-none w-full"
+              className="select select-bordered bg-transparent dark:border-gray-500 dark:focus:bg-gray-800 rounded-none w-full"
               name="ratings"
               id="sort"
               onChange={handleSort}

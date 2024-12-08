@@ -19,7 +19,7 @@ const GameNewsCard = ({ news }) => {
       <p>
         {isExpanded ? news.description : `${news.description.slice(0, 160)}...`}
       </p>
-      <button onClick={handleToggle} className="text-purple-500 font-semibold items-center flex justify-center">
+      <button onClick={handleToggle} className="text-cyan-500 font-semibold items-center flex justify-center">
         <span>{isExpanded ? "Show Less" : "Read More"}</span>
         <span className="mt-1 text-lg">{isExpanded? <MdKeyboardDoubleArrowUp/> : <MdKeyboardDoubleArrowDown />}</span>
       </button>

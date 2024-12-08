@@ -4,7 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { FaPen, FaTrash } from "react-icons/fa6";
 import Swal from "sweetalert2";
 import Loading from "./Loading";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 const MyReviews = () => {
   const { user } = useContext(AuthContext);
   const [myReviews, setMyReviews] = useState([]);
@@ -75,13 +75,17 @@ const MyReviews = () => {
       <Helmet>
         <title>Chill Gamer | My Review</title>
       </Helmet>
-      <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">
+      <h2 className="mb-2 text-center text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
         My Review
       </h2>
+      <p className="text-sm text-center max-w-xl mx-auto mb-4 text-gray-500 dark:text-gray-400">
+        View and manage all your game reviews in one place. See how your
+        opinions stack up with others!
+      </p>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="bg-purple-500 text-white">
+          <thead className="bg-cyan-500 text-white">
             <tr>
               <th></th>
               <th>User Name</th>
@@ -104,7 +108,7 @@ const MyReviews = () => {
                 <td className="text-center flex flex-col justify-center sm:flex-row">
                   <Link
                     to={`/updateReview/${review._id}`}
-                    className="btn btn-sm sm:btn-md btn-circle border-none mr-2 bg-purple-500 text-white"
+                    className="btn btn-sm sm:btn-md btn-circle border-none mr-2 bg-cyan-500 text-white"
                     data-tooltip-id="my-tooltip"
                     data-tooltip-place="top"
                     data-tooltip-content="Update"

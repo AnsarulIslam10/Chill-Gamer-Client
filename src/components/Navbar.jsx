@@ -31,8 +31,8 @@ const Navbar = () => {
         <NavLink
           to={"/"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
-              isActive ? "bg-purple-500 text-white" : ""
+            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+              isActive ? "bg-cyan-500 text-white" : ""
             }`
           }
         >
@@ -43,8 +43,8 @@ const Navbar = () => {
         <NavLink
           to={"/reviews"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
-              isActive ? "bg-purple-500 text-white" : ""
+            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+              isActive ? "bg-cyan-500 text-white" : ""
             }`
           }
         >
@@ -55,8 +55,8 @@ const Navbar = () => {
         <NavLink
           to={"/addReview"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
-              isActive ? "bg-purple-500 text-white" : ""
+            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+              isActive ? "bg-cyan-500 text-white" : ""
             }`
           }
         >
@@ -67,8 +67,8 @@ const Navbar = () => {
         <NavLink
           to={"/myReviews"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
-              isActive ? "bg-purple-500 text-white" : ""
+            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+              isActive ? "bg-cyan-500 text-white" : ""
             }`
           }
         >
@@ -79,8 +79,8 @@ const Navbar = () => {
         <NavLink
           to={"/myWatchlist"}
           className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-purple-400 ${
-              isActive ? "bg-purple-500 text-white" : ""
+            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+              isActive ? "bg-cyan-500 text-white" : ""
             }`
           }
         >
@@ -91,7 +91,7 @@ const Navbar = () => {
   );
   return (
     <nav className="max-w-7xl px-2 mx-auto sticky top-0 z-50">
-      <div className="navbar bg-base-100 backdrop-blur-sm dark:bg-black/5 bg-white/5 dark:text-purple-400 text-purple-500 px-0">
+      <div className="navbar bg-base-100 backdrop-blur-sm dark:bg-black/5 bg-white/5 dark:text-cyan-400 text-cyan-600 px-0">
         <div className="navbar-start">
           <div className="dropdown">
             <div tabIndex={0} role="button" className="mr-1 text-xl lg:hidden">
@@ -99,13 +99,13 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm bg-white/70 dark:bg-black/40 dark:text-purple-400 text-purple-500 dropdown-content rounded-none z-[10] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm bg-white/70 dark:bg-black/40 dark:text-cyan-400 text-cyan-800 dropdown-content rounded-none z-[10] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
           </div>
           <Slide>
-            <a className="font-black text-purple-600 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
+            <a className="font-black text-cyan-500 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
               Chill Gamer
             </a>
           </Slide>
@@ -114,8 +114,8 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle hover:bg-yellow-400 dark:hover:bg-blue-500 sm:mr-2">
-            {theme === "light" ? <FaMoon className="text-blue-500" size={24} /> : <FaSun  className="text-yellow-400" size={24}/>}
+          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle sm:mr-2">
+            {theme === "light" ? <FaMoon className="text-cyan-500" size={24} /> : <FaSun  className="text-yellow-400" size={24}/>}
           </button>
           {user && user?.email ? (
             <Slide direction="right">
@@ -127,14 +127,14 @@ const Navbar = () => {
                   data-tooltip-content={user.displayName}
                 >
                   <img
-                    className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1"
+                    className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-cyan-500 rounded-full ml-1"
                     src={user?.photoURL}
                     alt=""
                   />
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className="btn btn-sm md:btn-md bg-purple-500 border-none rounded-none text-white px-2"
+                  className="btn btn-sm md:btn-md bg-cyan-500 border-none rounded-none text-white px-2"
                 >
                   Log Out
                 </button>
@@ -145,13 +145,13 @@ const Navbar = () => {
               <div>
                 <Link
                   to={"/login"}
-                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-purple-500 rounded-none text-white"
+                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-cyan-500 rounded-none text-white"
                 >
                   Login
                 </Link>
                 <Link
                   to={"/register"}
-                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-purple-500 rounded-none text-white"
+                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-cyan-500 rounded-none text-white"
                 >
                   Register
                 </Link>

@@ -75,13 +75,17 @@ const GameWatchlist = () => {
       <Helmet>
         <title>Chill Gamer | Game Watchlist</title>
       </Helmet>
-      <h2 className="mb-8 text-center text-2xl sm:text-3xl md:text-4xl font-orbitron font-bold">
+      <h2 className="mb-2 text-center text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
         My Game Watchlist
       </h2>
+      <p className="text-sm text-center max-w-xl mx-auto mb-4 text-gray-500 dark:text-gray-400">
+        Keep track of the games you're excited to play. Your watchlist is your
+        go-to for future gaming adventures!
+      </p>
       <div className="overflow-x-auto">
         <table className="table">
           {/* head */}
-          <thead className="bg-purple-500 text-white">
+          <thead className="bg-cyan-500 text-white">
             <tr>
               <th></th>
               <th>Game Title</th>

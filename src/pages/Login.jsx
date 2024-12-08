@@ -87,7 +87,7 @@ const Login = () => {
         </div>
 
         <div className="w-full sm:w-1/2 p-8 flex flex-col justify-center backdrop-blur-sm bg-white/10">
-          <h2 className="text-white text-2xl font-bold text-center font-orbitron mb-6">
+          <h2 className="text-cyan-400 text-2xl font-bold text-center font-orbitron mb-6">
             LOGIN
           </h2>
           <div className="flex justify-center gap-4 mb-4">
@@ -98,7 +98,7 @@ const Login = () => {
               <FcGoogle />
             </a>
           </div>
-          <div className="divider divider-neutral text-white">OR</div>
+          <div className="divider divider-info text-white">OR</div>
           <form onSubmit={handleLogin} className="space-y-4">
             <div className="form-control">
               <label className="label text-white">
@@ -108,7 +108,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 placeholder="Please enter your email"
-                className="input input-bordered input-info bg-transparent text-white focus:outline-none"
+                className="input rounded-none input-bordered input-info bg-transparent text-white focus:outline-none"
               />
             </div>
             <div className="form-control relative">
@@ -119,7 +119,7 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 placeholder="Please enter your password"
-                className="input input-bordered input-info  bg-transparent text-white focus:outline-none"
+                className="input rounded-none input-bordered input-info  bg-transparent text-white focus:outline-none"
               />
               <p
                 onClick={() => setShowPassword(!showPassword)}
@@ -138,11 +138,11 @@ const Login = () => {
                 Forgot your password?
               </a>
             </div>
-            <button className="btn btn-primary w-full mt-4">Login</button>
+            <button className="btn bg-cyan-500 text-white border-none rounded-none w-full mt-4">Login</button>
           </form>
           <p className="text-center text-white mt-6">
             Don't have an account?{" "}
-            <Link to={"/register"} className="text-blue-200 hover:underline">
+            <Link to={"/register"} className="text-cyan-200 hover:underline">
               Register
             </Link>
           </p>

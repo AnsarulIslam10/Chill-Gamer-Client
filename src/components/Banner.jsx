@@ -54,7 +54,7 @@ const Banner = () => {
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron font-bold mb-2">Explore All Reviews</h1>
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Explore All Reviews</h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text1}_
               <FaQuoteRight className="text-gray-400" />
@@ -68,7 +68,7 @@ const Banner = () => {
             <div>
               <Link
                 to={"/reviews"}
-                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-purple-500 text-purple-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-purple-500"
+                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-cyan-500 text-cyan-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-cyan-500"
               >
                 All Reviews
               </Link>
@@ -82,7 +82,7 @@ const Banner = () => {
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron font-bold mb-2">Add Review</h1>
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Add Review</h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text2}_
               <FaQuoteRight className="text-gray-400" />
@@ -93,7 +93,7 @@ const Banner = () => {
             <div>
               <Link
                 to={"/addReview"}
-                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-purple-500 text-purple-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-purple-500"
+                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-cyan-500 text-cyan-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-cyan-500"
               >
                 Add Review
               </Link>
@@ -108,7 +108,7 @@ const Banner = () => {
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50">
-            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron font-bold mb-2">Game Watchlist</h1>
+            <h1 className="text-sm sm:text-lg md:text-2xl lg:text-4xl font-orbitron text-cyan-500 font-bold mb-2">Game Watchlist</h1>
             <h3 className="flex items-center text-red-400 text-xs font-semibold">
               <FaQuoteLeft className="text-gray-400" />_{text3}_
               <FaQuoteRight className="text-gray-400" />
@@ -119,7 +119,7 @@ const Banner = () => {
             <div>
               <Link
                 to={"/myWatchlist"}
-                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-purple-500 text-purple-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-purple-500"
+                className="btn btn-xs px-1 sm:px-3 sm:btn-sm md:btn-md border-cyan-500 text-cyan-400 font-poppins  btn-outline mt-2 rounded-none hover:bg-cyan-500"
               >
                 Watchlist
               </Link>

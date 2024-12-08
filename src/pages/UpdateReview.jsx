@@ -21,13 +21,12 @@ const UpdateReview = () => {
     const form = e.target;
     const name = form.name.value;
     const cover = form.cover.value;
-    const ratings = form.ratings.value;
+    const rating = form.rating.value;
     const year = form.year.value;
     const genres = form.genres.value;
     const username = form.username.value;
     const email = form.email.value;
     const review = form.review.value;
-    const rating = Number(ratings);
     const updatedReview = {
       name,
       cover,
@@ -77,12 +76,15 @@ const UpdateReview = () => {
             onSubmit={handleUpdateReview}
             className="card-body text-black shadow-lg"
           >
-            <h2 className="mb-6 text-center text-2xl sm:text-3xl md:text-4xl text-gray-800 dark:text-white font-orbitron font-bold">
+            <h2 className="mb-2 text-center text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
               Update Your Game Review
             </h2>
+            <p className="text-sm text-center max-w-xl mx-auto mb-4 text-gray-500 dark:text-gray-400">
+            Update your review and share your latest thoughts to help others make informed decisions on their next game!
+            </p>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text dark:text-white text-lg">
                   Game Title
                 </span>
               </label>
@@ -91,13 +93,13 @@ const UpdateReview = () => {
                 defaultValue={name}
                 name="name"
                 placeholder="Please enter game name"
-                className="input input-bordered"
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text dark:text-white text-lg">
                   Game Cover Image
                 </span>
               </label>
@@ -106,30 +108,29 @@ const UpdateReview = () => {
                 defaultValue={cover}
                 name="cover"
                 placeholder="Please enter game cover image"
-                className="input input-bordered"
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">Rating</span>
+                <span className="label-text dark:text-white text-lg">Rating</span>
               </label>
-              <select
-                className="select select-bordered w-full"
-                name="ratings"
-                defaultValue={rating}
+              <input
+                type="number"
+                name="rating"
                 id=""
-              >
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-              </select>
+                min="1"
+                max="5"
+                step="1"
+                placeholder="Enter rating (1-5)"
+                defaultValue={rating}
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+              />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text dark:text-white text-lg">
                   Publishing Year
                 </span>
               </label>
@@ -138,16 +139,16 @@ const UpdateReview = () => {
                 defaultValue={year}
                 name="year"
                 placeholder="Please enter game name"
-                className="input input-bordered"
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">Genres</span>
+                <span className="label-text dark:text-white text-lg">Genres</span>
               </label>
               <select
-                className="select select-bordered w-full"
+                className="select select-bordered rounded-none bg-transparent select-info dark:focus:bg-gray-800 dark:text-white w-full focus:outline-none"
                 name="genres"
                 defaultValue={genres}
                 id=""
@@ -164,7 +165,7 @@ const UpdateReview = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">User Name</span>
+                <span className="label-text dark:text-white text-lg">User Name</span>
               </label>
               <input
                 type="text"
@@ -172,13 +173,13 @@ const UpdateReview = () => {
                 placeholder="Your name"
                 defaultValue={user?.displayName}
                 readOnly
-                className="input input-bordered"
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text dark:text-white text-lg">
                   User Email
                 </span>
               </label>
@@ -188,25 +189,25 @@ const UpdateReview = () => {
                 placeholder="email"
                 defaultValue={user?.email}
                 readOnly
-                className="input input-bordered"
+                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text text-white text-lg">
+                <span className="label-text dark:text-white text-lg">
                   Review Description
                 </span>
               </label>
               <textarea
                 name="review"
                 defaultValue={description}
-                className="textarea textarea-bordered"
+                className="textarea textarea-bordered rounded-none bg-transparent textarea-info dark:text-white focus:outline-none"
                 placeholder="Write your review"
               ></textarea>
             </div>
             <div className="form-control mt-6">
-              <button className="btn bg-purple-500 rounded-none text-white border-none">
+              <button className="btn bg-cyan-500 rounded-none text-white border-none">
                 Update Review
               </button>
             </div>

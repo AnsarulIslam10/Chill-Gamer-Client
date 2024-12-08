@@ -9,7 +9,7 @@ const MainLayout = () => {
         <div className='dark:bg-[#181818] dark:text-[#e0e0e0]'>
             <Tooltip id="my-tooltip" className="z-10" />
             <Navbar></Navbar>
-            <div className='min-h-[calc(100vh-284px)]'>
+            <div className='min-h-[calc(100vh-400px)]'>
             <Outlet></Outlet>
             </div>
             <Footer></Footer>
