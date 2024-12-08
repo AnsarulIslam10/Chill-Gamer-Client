@@ -53,7 +53,7 @@ const Footer = () => {
               <input
                 type="text"
                 placeholder="Enter your email"
-                className="input rounded-none w-40 sm:w-auto input-bordered join-item"
+                className="input rounded-none w-40 lg:w-auto input-bordered join-item"
               />
               <button className="btn bg-purple-500 border-none text-white rounded-none join-item">
                 Subscribe
