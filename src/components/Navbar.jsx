@@ -99,7 +99,7 @@ const Navbar = () => {
             </div>
             <ul
               tabIndex={0}
-              className="menu menu-sm backdrop-blur-sm bg-white/5 text-white dropdown-content bg-base-100 rounded-none z-[10] mt-3 w-52 p-2 shadow"
+              className="menu menu-sm bg-white/70 dark:bg-black/40 dark:text-purple-400 text-purple-500 dropdown-content rounded-none z-[10] mt-3 w-52 p-2 shadow"
             >
               {links}
             </ul>
@@ -114,7 +114,7 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle hover:bg-yellow-400 dark:hover:bg-blue-500 mr-2">
+          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle hover:bg-yellow-400 dark:hover:bg-blue-500 sm:mr-2">
             {theme === "light" ? <FaMoon className="text-blue-500" size={24} /> : <FaSun  className="text-yellow-400" size={24}/>}
           </button>
           {user && user?.email ? (
@@ -127,14 +127,14 @@ const Navbar = () => {
                   data-tooltip-content={user.displayName}
                 >
                   <img
-                    className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1 mr-2"
+                    className="sm:w-10 sm:h-10 w-7 h-7 border-2 border-blue-500 rounded-full ml-1"
                     src={user?.photoURL}
                     alt=""
                   />
                 </div>
                 <button
                   onClick={handleLogOut}
-                  className="btn btn-sm sm:btn-md bg-purple-500 border-none rounded-none text-white"
+                  className="btn btn-sm md:btn-md bg-purple-500 border-none rounded-none text-white px-2"
                 >
                   Log Out
                 </button>
