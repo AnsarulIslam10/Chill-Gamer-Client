@@ -14,7 +14,7 @@ const ErrorPage = () => {
       />
       <Link
         to={"/"}
-        className="btn btn-lg relative -top-40 bg-cyan-500 rounded-none text-white text-xl"
+        className="btn btn-md relative sm:-top-20 md:-top-40 bg-cyan-500 rounded-none text-white text-xl"
       >
         Go Back To Home
       </Link>
