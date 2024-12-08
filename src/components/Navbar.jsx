@@ -60,7 +60,7 @@ const Navbar = () => {
             }`
           }
         >
-          ADD Review
+          Add Review
         </NavLink>
       </li>
       <li>
