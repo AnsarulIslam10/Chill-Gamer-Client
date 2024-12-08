@@ -15,7 +15,7 @@ const GameNewsCard = ({ news }) => {
       <p className="text-gray-400 text-sm flex gap-1"><FaCalendarAlt className="mt-[1.5px]"/>{news.date}</p>
       <p className="text-red-400 text-sm flex gap-1"><FaNewspaper className="mt-[1.5px]"/>{news.source}</p>
       </div>
-      <h2 className="text-xl sm:text-2xl md:text-3xl font-semibold my-2">{news.title}</h2>
+      <h2 className="text-xl sm:text-2xl md:text-3xl text-cyan-500 font-semibold my-2">{news.title}</h2>
       <p>
         {isExpanded ? news.description : `${news.description.slice(0, 160)}...`}
       </p>
