@@ -4,6 +4,7 @@ import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Helmet } from 'react-helmet-async';
+import { errorHandler } from "../firebase/FirebaseErrorHandler";
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
   const location = useLocation()
@@ -41,7 +42,9 @@ const Register = () => {
         navigate(location?.state ? location.state : "/")
       })
       .catch((err) => {
-        toast.error(err.message);
+        if (err && err.code) {
+         errorHandler(err)
+        }
       });
   };
   return (

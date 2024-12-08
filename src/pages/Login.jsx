@@ -5,6 +5,9 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
+import { errorHandler } from "../firebase/FirebaseErrorHandler";
+
+
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -38,7 +41,9 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        toast.error(err.message);
+        if (err && err.code) {
+          errorHandler(err)
+        }
       });
   };
 
@@ -49,7 +54,9 @@ const Login = () => {
         navigate(location?.state ? location.state : "/");
       })
       .catch((err) => {
-        toast.error(err.message);
+        if (err && err.code) {
+          errorHandler(err)
+        }
       });
   };
 
