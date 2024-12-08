@@ -49,7 +49,7 @@ const Banner = () => {
       >
         <SwiperSlide className="relative">
           <img
-            src="https://i.ibb.co.com/kGSv7PW/ghost.jpg"
+            src="https://i.ibb.co.com/hDkWm7y/ghost.jpg"
             className="w-full"
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
@@ -77,7 +77,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="relative">
           <img
-            src="https://i.ibb.co.com/6mQHcx5/batman.jpg"
+            src="https://i.ibb.co.com/KWsBfdb/batman.jpg"
             className="w-full"
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
@@ -103,7 +103,7 @@ const Banner = () => {
         <SwiperSlide className="relative">
           {" "}
           <img
-            src="https://i.ibb.co.com/1f00Xgd/slider-image.jpg"
+            src="https://i.ibb.co.com/tCSJKp8/slider-image.jpg"
             className="w-full"
           />
           <div className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center

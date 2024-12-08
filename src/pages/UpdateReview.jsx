@@ -60,7 +60,7 @@ const UpdateReview = () => {
   };
   return (
     <div
-      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/WWzQDDT/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/PZGBmRW/19852469-6193217.jpg')]"
+      className="min-h-screen flex justify-center items-center bg-[url('https://i.ibb.co.com/1QYy1jS/6436983-3312919.jpg')] dark:bg-[url('https://i.ibb.co.com/sv5HV4F/19852469-6193217.jpg')]"
       style={{
         backgroundPosition: "center",
         backgroundSize: "cover",

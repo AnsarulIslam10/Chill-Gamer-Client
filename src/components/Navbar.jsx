@@ -105,9 +105,9 @@ const Navbar = () => {
             </ul>
           </div>
           <Slide>
-            <a className="font-black text-cyan-500 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
+            <Link to={'/'} className="font-black cursor-pointer text-cyan-500 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
               Chill Gamer
-            </a>
+            </Link>
           </Slide>
         </div>
         <div className="navbar-center hidden lg:flex">

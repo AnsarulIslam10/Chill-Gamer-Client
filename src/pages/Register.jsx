@@ -51,7 +51,7 @@ const Register = () => {
     <div
       className="flex justify-center items-center min-h-screen"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/84K6pWN/register-bg.jpg)`,
+        backgroundImage: `url(https://i.ibb.co.com/qDj735Z/register-bg-img.jpg)`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -65,7 +65,7 @@ const Register = () => {
           <div
             className="flex flex-col items-center h-full"
             style={{
-              backgroundImage: `url(https://i.ibb.co.com/ftT2Cbv/side-banner-3.jpg)`,
+              backgroundImage: `url(https://i.ibb.co.com/F41cqCL/side-banner-3.jpg)`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
