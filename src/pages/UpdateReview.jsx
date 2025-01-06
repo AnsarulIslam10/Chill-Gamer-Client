@@ -52,7 +52,8 @@ const UpdateReview = () => {
             title: "Success!",
             text: "Review Updated Successfully",
             icon: "success",
-            confirmButtonText: "Close",
+            showConfirmButton: false,
+            timer: 1500,
           });
           navigate("/myReviews");
         }

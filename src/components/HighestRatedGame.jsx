@@ -24,26 +24,35 @@ const HighestRatedGame = () => {
         {/* card */}
         {games.map((game) => (
           <Zoom key={game._id} duration={1000} triggerOnce={true}>
-            <div className="flex h-[100%] flex-col justify-center items-center bg-white p-6 hover:scale-105 transition-all duration-300">
-              <img className="mb-3 w-full aspect-video object-cover" src={game.cover} alt="" />
+            <div className="flex h-[100%] flex-col justify-center items-center bg-white dark:bg-slate-800 shadow-sm hover:shadow-md p-2 pb-4 hover:scale-105 transition-all duration-300">
+              <img
+                className="mb-3 w-full aspect-video object-cover"
+                src={game.cover}
+                alt=""
+              />
               <div className="flex-1 flex flex-col justify-center items-center text-center">
-              <h2 className="text-2xl font-semibold text-cyan-500">{game.name}</h2>
-              <div className="flex items-center">
-                <ReactStars
-                  count={5}
-                  value={game.rating}
-                  size={24}
-                  activeColor="#ffd700"
-                />
-                <p>({game.rating})</p>
-              </div>
-              <p>{game.year}</p>
-              <p className="text-cyan-500">{game.genres}</p>
+                <h2
+                  className="text-2xl font-semibold cursor-pointer text-cyan-500"
+                  title={game.name}
+                >
+                  {game.name.length > 20 ? `${game.name.slice(0, 20)}...` : game.name}
+                </h2>
+                <div className="flex items-center">
+                  <ReactStars
+                    count={5}
+                    value={game.rating}
+                    size={24}
+                    activeColor="#ffd700"
+                  />
+                  <p>({game.rating})</p>
+                </div>
+                <p>{game.year}</p>
+                <p className="text-cyan-500">{game.genres}</p>
               </div>
 
               <Link
                 to={`/review/${game._id}`}
-                className="btn bg-cyan-500 border-none rounded-none text-white mt-3"
+                className="btn btn-sm bg-cyan-500 border-none rounded-none text-white mt-3"
               >
                 See More
               </Link>

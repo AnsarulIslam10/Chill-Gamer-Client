@@ -105,7 +105,7 @@ const Navbar = () => {
             </ul>
           </div>
           <Slide>
-            <Link to={'/'} className="font-black cursor-pointer text-cyan-500 text-center text-sm sm:text-lg md:text-xl lg:text-2xl font-orbitron">
+            <Link to={'/'} className="font-black cursor-pointer text-cyan-500 text-center text-sm sm:text-lg md:text-2xl lg:text-3xl font-orbitron">
               Chill Gamer
             </Link>
           </Slide>
@@ -144,16 +144,16 @@ const Navbar = () => {
             <Slide direction="right">
               <div>
                 <Link
-                  to={"/login"}
-                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none mr-1 bg-cyan-500 rounded-none text-white"
-                >
-                  Login
-                </Link>
-                <Link
                   to={"/register"}
-                  className="btn btn-sm px-1 sm:px-3 sm:btn-md border-none bg-cyan-500 rounded-none text-white"
+                  className="btn btn-sm px-1 sm:px-4 sm:btn-md btn-outline border-cyan-500 hover:bg-transparent hover:text-cyan-600 hover:border-cyan-600 text-cyan-500 rounded-full"
                 >
                   Register
+                </Link>
+                <Link
+                  to={"/login"}
+                  className="btn btn-sm px-1 sm:px-6 sm:btn-md border-none ml-1 bg-cyan-500 rounded-full hover:bg-cyan-600 text-white"
+                >
+                  Login
                 </Link>
               </div>
             </Slide>

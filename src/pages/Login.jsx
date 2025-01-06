@@ -108,7 +108,7 @@ const Login = () => {
                 type="email"
                 name="email"
                 required
-                placeholder="Please enter your email"
+                placeholder="Your email"
                 className="input rounded-none input-bordered input-info bg-transparent text-white focus:outline-none"
               />
             </div>
@@ -120,7 +120,7 @@ const Login = () => {
                 type={showPassword ? "text" : "password"}
                 name="password"
                 required
-                placeholder="Please enter your password"
+                placeholder="Your password"
                 className="input rounded-none input-bordered input-info  bg-transparent text-white focus:outline-none"
               />
               <p
@@ -140,7 +140,7 @@ const Login = () => {
                 Forgot your password?
               </a>
             </div>
-            <button className="btn bg-cyan-500 text-white border-none rounded-none w-full mt-4">Login</button>
+            <button className="btn bg-cyan-500 hover:bg-cyan-600 text-white border-none rounded-none w-full mt-4">Login</button>
           </form>
           <p className="text-center text-white mt-6">
             Don't have an account?{" "}
