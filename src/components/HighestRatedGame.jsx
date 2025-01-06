@@ -43,6 +43,7 @@ const HighestRatedGame = () => {
                     value={game.rating}
                     size={24}
                     activeColor="#ffd700"
+                    edit={false}
                   />
                   <p>({game.rating})</p>
                 </div>

@@ -52,7 +52,7 @@ const AddReview = () => {
       <Helmet>
         <title>Chill Gamer | Add Review</title>
       </Helmet>
-      <div className="max-w-7xl mb-52 flex-1 px-2 mx-auto py-16">
+      <div className="max-w-7xl mb-52 flex-1 px-4 mx-auto py-16">
         <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg border-cyan-100 border dark:border-none shadow-cyan-200 dark:shadow-none mx-auto shrink-0">
           <form
             onSubmit={handleAddReview}
@@ -61,121 +61,128 @@ const AddReview = () => {
             <h2 className="text-center mb-2 text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
               Add Your Game Review
             </h2>
-            <p className="text-sm max-w-xl mx-auto text-center mb-4 text-gray-500 dark:text-gray-400">
+            <p className="text-sm max-w-xl mx-auto text-center mb-6 text-gray-500 dark:text-gray-400">
               Share your gaming experience and help others choose their next
               favorite game!
             </p>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  Game Title
-                </span>
-              </label>
-              <input
-                type="text"
-                name="name"
-                placeholder="Enter game name"
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  Game Cover Image
-                </span>
-              </label>
-              <input
-                type="text"
-                name="cover"
-                placeholder="Enter game cover image url"
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  Rating
-                </span>
-              </label>
-              <input
-                type="number"
-                name="rating"
-                id=""
-                min="1"
-                max="5"
-                step="1"
-                placeholder="Enter rating (1-5)"
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  Publishing Year
-                </span>
-              </label>
-              <input
-                type="number"
-                name="year"
-                placeholder="Game release year"
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  Genres
-                </span>
-              </label>
-              <select
-                className="select select-bordered rounded-none bg-transparent select-info dark:focus:bg-gray-800 dark:text-white w-full focus:outline-none"
-                name="genres"
-                id=""
-              >
-                <option value="Action">Action</option>
-                <option value="Adventure">Adventure</option>
-                <option value="RPG">RPG</option>
-                <option value="FPS">FPS</option>
-                <option value="TPS">TPS</option>
-                <option value="Sports">Sports</option>
-                <option value="Survival">Survival</option>
-                <option value="Horror">Horror</option>
-              </select>
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  User Name
-                </span>
-              </label>
-              <input
-                type="text"
-                name="username"
-                placeholder="Your Name"
-                defaultValue={user.displayName}
-                readOnly
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-                required
-              />
-            </div>
-            <div className="form-control">
-              <label className="label">
-                <span className="label-text text-black dark:text-white text-lg">
-                  User Email
-                </span>
-              </label>
-              <input
-                type="email"
-                name="email"
-                placeholder="email"
-                defaultValue={user.email}
-                readOnly
-                className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
-                required
-              />
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    Game Title
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="name"
+                  placeholder="Enter game name"
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    Game Cover Image
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="cover"
+                  placeholder="Enter game cover image url"
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    Rating
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="rating"
+                  min="1"
+                  max="5"
+                  step="1"
+                  placeholder="Enter rating (1-5)"
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    Publishing Year
+                  </span>
+                </label>
+                <input
+                  type="number"
+                  name="year"
+                  placeholder="Game release year"
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    Genres
+                  </span>
+                </label>
+                <select
+                  className="select select-bordered rounded-none bg-transparent select-info dark:focus:bg-gray-800 dark:text-white w-full focus:outline-none"
+                  name="genres"
+                >
+                  <option value="Action">Action</option>
+                  <option value="Adventure">Adventure</option>
+                  <option value="RPG">RPG</option>
+                  <option value="FPS">FPS</option>
+                  <option value="TPS">TPS</option>
+                  <option value="Sports">Sports</option>
+                  <option value="Survival">Survival</option>
+                  <option value="Horror">Horror</option>
+                </select>
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    User Name
+                  </span>
+                </label>
+                <input
+                  type="text"
+                  name="username"
+                  placeholder="Your Name"
+                  defaultValue={user.displayName}
+                  readOnly
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                  required
+                />
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text text-black dark:text-white text-lg">
+                    User Email
+                  </span>
+                </label>
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Your Email"
+                  defaultValue={user.email}
+                  readOnly
+                  className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
+                  required
+                />
+              </div>
             </div>
             <div className="form-control">
               <label className="label">
@@ -189,8 +196,9 @@ const AddReview = () => {
                 placeholder="Write your review"
               ></textarea>
             </div>
+
             <div className="form-control mt-6">
-              <button className="btn bg-cyan-500 rounded-none text-white border-none">
+              <button className="btn bg-cyan-500 rounded-none text-white border-none w-full">
                 Add Review
               </button>
             </div>

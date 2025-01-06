@@ -23,6 +23,7 @@ const ReviewCard = ({ review }) => {
             value={rating}
             size={24}
             activeColor="#ffd700"
+            edit={false}
           />
           <p>({rating})</p>
         </div>

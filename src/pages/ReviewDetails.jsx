@@ -78,6 +78,7 @@ const ReviewDetails = () => {
               value={rating}
               size={24}
               activeColor="#ffd700"
+              edit={false}
             />
             <p className="ml-2">({rating})</p>
           </div>
