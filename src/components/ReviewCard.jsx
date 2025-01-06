@@ -12,7 +12,7 @@ const ReviewCard = ({ review }) => {
       />
       <div className="flex-1 flex flex-col justify-center items-center text-center">
         <h2
-          className="text-2xl font-semibold cursor-pointer text-cyan-500"
+          className="text-xl font-semibold cursor-pointer text-cyan-500"
           title={name}
         >
           {name.length > 20 ? `${name.slice(0, 20)}...` : name}

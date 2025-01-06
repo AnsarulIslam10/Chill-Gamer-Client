@@ -51,42 +51,46 @@ const Navbar = () => {
           All Reviews
         </NavLink>
       </li>
-      <li>
-        <NavLink
-          to={"/addReview"}
-          className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
-              isActive ? "bg-cyan-500 text-white" : ""
-            }`
-          }
-        >
-          Add Review
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={"/myReviews"}
-          className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
-              isActive ? "bg-cyan-500 text-white" : ""
-            }`
-          }
-        >
-          My Review
-        </NavLink>
-      </li>
-      <li>
-        <NavLink
-          to={"/myWatchlist"}
-          className={({ isActive }) =>
-            `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
-              isActive ? "bg-cyan-500 text-white" : ""
-            }`
-          }
-        >
-          Game WatchList
-        </NavLink>
-      </li>
+      {user && (
+        <div className="lg:flex items-center">
+          <li>
+            <NavLink
+              to={"/addReview"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+                  isActive ? "bg-cyan-500 text-white" : ""
+                }`
+              }
+            >
+              Add Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/myReviews"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+                  isActive ? "bg-cyan-500 text-white" : ""
+                }`
+              }
+            >
+              My Review
+            </NavLink>
+          </li>
+          <li>
+            <NavLink
+              to={"/myWatchlist"}
+              className={({ isActive }) =>
+                `btn btn-sm btn-ghost rounded-none hover:bg-cyan-400 ${
+                  isActive ? "bg-cyan-500 text-white" : ""
+                }`
+              }
+            >
+              Game WatchList
+            </NavLink>
+          </li>
+        </div>
+      )}
     </Zoom>
   );
   return (
@@ -105,7 +109,10 @@ const Navbar = () => {
             </ul>
           </div>
           <Slide>
-            <Link to={'/'} className="font-black cursor-pointer text-cyan-500 text-center text-sm sm:text-lg md:text-2xl lg:text-3xl font-orbitron">
+            <Link
+              to={"/"}
+              className="font-black cursor-pointer text-cyan-500 text-center text-sm sm:text-lg md:text-2xl lg:text-3xl font-orbitron"
+            >
               Chill Gamer
             </Link>
           </Slide>
@@ -114,8 +121,15 @@ const Navbar = () => {
           <ul className="menu menu-horizontal gap-2 px-1">{links}</ul>
         </div>
         <div className="navbar-end">
-          <button onClick={toggleTheme} className="btn btn-sm btn-ghost btn-circle sm:mr-2">
-            {theme === "light" ? <FaMoon className="text-cyan-500" size={24} /> : <FaSun  className="text-yellow-400" size={24}/>}
+          <button
+            onClick={toggleTheme}
+            className="btn btn-sm btn-ghost btn-circle sm:mr-2"
+          >
+            {theme === "light" ? (
+              <FaMoon className="text-cyan-500" size={24} />
+            ) : (
+              <FaSun className="text-yellow-400" size={24} />
+            )}
           </button>
           {user && user?.email ? (
             <Slide direction="right">
