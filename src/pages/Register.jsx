@@ -5,6 +5,8 @@ import { toast } from "react-toastify";
 import { FaEye, FaEyeSlash } from "react-icons/fa6";
 import { Helmet } from 'react-helmet-async';
 import { errorHandler } from "../firebase/FirebaseErrorHandler";
+import registerImg from "../assets/side banner 3.webp"
+import bg from "../assets/register bg img.webp"
 const Register = () => {
   const { createUser, setUser, updateUserProfile } = useContext(AuthContext);
   const location = useLocation()
@@ -51,7 +53,7 @@ const Register = () => {
     <div
       className="flex justify-center items-center min-h-screen"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/qDj735Z/register-bg-img.jpg)`,
+        backgroundImage: `url(${bg})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -65,7 +67,7 @@ const Register = () => {
           <div
             className="flex flex-col items-center h-full"
             style={{
-              backgroundImage: `url(https://i.ibb.co.com/F41cqCL/side-banner-3.jpg)`,
+              backgroundImage: `url(${registerImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",

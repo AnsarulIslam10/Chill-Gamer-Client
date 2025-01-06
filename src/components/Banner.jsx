@@ -11,6 +11,9 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useTypewriter } from "react-simple-typewriter";
 import { FaQuoteLeft, FaQuoteRight } from "react-icons/fa6";
 import { Link } from "react-router-dom";
+import slider1 from "../assets/SliderImage/ghost.webp"
+import slider2 from "../assets/SliderImage/batman.webp"
+import slider3 from "../assets/SliderImage/slider image.webp"
 const Banner = () => {
   const [text1] = useTypewriter({
     words: [
@@ -47,7 +50,7 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide className="relative">
-          <img src="https://i.ibb.co.com/hDkWm7y/ghost.jpg" />
+          <img src={slider1} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50"
@@ -76,7 +79,7 @@ const Banner = () => {
           </div>
         </SwiperSlide>
         <SwiperSlide className="relative">
-          <img src="https://i.ibb.co.com/TKKbkDB/batman-slider.jpg" />
+          <img src={slider2} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50"
@@ -106,7 +109,7 @@ const Banner = () => {
         </SwiperSlide>
         <SwiperSlide className="relative">
           {" "}
-          <img src="https://i.ibb.co.com/tCSJKp8/slider-image.jpg" />
+          <img src={slider3} />
           <div
             className="absolute top-0 w-full h-full text-start flex flex-col justify-center items-center
            p-12 text-white bg-black bg-opacity-50"

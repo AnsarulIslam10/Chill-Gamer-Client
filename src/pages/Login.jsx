@@ -6,8 +6,8 @@ import { AuthContext } from "../providers/AuthProvider";
 import { toast } from "react-toastify";
 import { Helmet } from "react-helmet-async";
 import { errorHandler } from "../firebase/FirebaseErrorHandler";
-
-
+import loginImg from "../assets/side banner 2.webp"
+import bg from "../assets/register bg img.webp"
 const Login = () => {
   const { signInUser, signInWithGoogle } = useContext(AuthContext);
   const [showPassword, setShowPassword] = useState(false);
@@ -64,7 +64,7 @@ const Login = () => {
     <div
       className="flex justify-center items-center min-h-screen"
       style={{
-        backgroundImage: `url(https://i.ibb.co.com/qDj735Z/register-bg-img.jpg)`,
+        backgroundImage: `url(${bg})`,
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
@@ -78,7 +78,7 @@ const Login = () => {
           <div
             className="flex flex-col items-center h-full"
             style={{
-              backgroundImage: `url(https://i.ibb.co.com/dDCXSSJ/side-banner-2.jpg)`,
+              backgroundImage: `url(${loginImg})`,
               backgroundSize: "cover",
               backgroundPosition: "center",
               backgroundRepeat: "no-repeat",
