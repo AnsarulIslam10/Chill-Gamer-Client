@@ -1,0 +1,23 @@
+[
+    {
+        "id": 1,
+        "title": "Elden Ring: Nightreign",
+        "releaseDate": "November 2025",
+        "description": "An expansion or sequel to *Elden Ring*, exploring a dark, mystical world with challenging combat and lore-driven gameplay.",
+        "image": "https://i.ibb.co.com/XbH0jPs/elden-ring-nightreign-1.jpg"
+    },
+    {
+        "id": 2,
+        "title": "Grand Theft Auto VI",
+        "releaseDate": "December 2025",
+        "description": "The next entry in the GTA series, set in a fictional version of Miami with a new protagonist and enhanced open-world gameplay.",
+        "image": "https://i.ibb.co.com/WDnJgqQ/GTA-6-1.jpg"
+    },
+    {
+        "id": 3,
+        "title": "Ghost of Yotei",
+        "releaseDate": "August 2025",
+        "description": "A new samurai adventure set in a mystical, snow-covered world where you must fight off deadly forces threatening a forgotten village.",
+        "image": "https://i.ibb.co.com/xsdttWS/ghost-of-yotei-1.jpg"
+    }
+]

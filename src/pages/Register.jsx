@@ -52,12 +52,17 @@ const Register = () => {
   return (
     <div
       className="flex justify-center items-center min-h-screen"
-      
+      style={{
+        backgroundImage: `url(${bg})`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "no-repeat",
+      }}
     >
       <Helmet>
         <title>Chill Gamer | Register</title>
       </Helmet>
-      <div className="w-[700px] mb-96  flex shadow-xl rounded-2xl overflow-hidden">
+      <div className="w-[700px] mb-96 flex shadow-xl rounded-2xl overflow-hidden">
         <div className="hidden sm:block w-1/2">
           <div
             className="flex flex-col items-center h-full"
@@ -76,50 +81,50 @@ const Register = () => {
           </h2>
           <form onSubmit={handleRegister} className="space-y-2">
             <div className="form-control">
-              <label className="label ">
+              <label className="label text-white">
                 <span>Name</span>
               </label>
               <input
                 type="text"
                 name="name"
-                placeholder="Your username"
-                className="input input-bordered rounded-none input-info bg-transparent focus:outline-none"
+                placeholder="Please enter your username"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
-              <label className="label ">
+              <label className="label text-white">
                 <span>Photo URL</span>
               </label>
               <input
                 type="text"
                 name="photo"
-                placeholder="Your photo url"
-                className="input input-bordered rounded-none input-info bg-transparent  focus:outline-none"
+                placeholder="Please enter your photo url"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control">
-              <label className="label ">
+              <label className="label text-white">
                 <span>Email</span>
               </label>
               <input
                 type="email"
                 name="email"
-                placeholder="Your email"
-                className="input input-bordered rounded-none input-info bg-transparent  focus:outline-none"
+                placeholder="Please enter your email"
+                className="input input-bordered rounded-none input-info bg-transparent text-white focus:outline-none"
                 required
               />
             </div>
             <div className="form-control relative">
-              <label className="label ">
+              <label className="label text-white">
                 <span>Password</span>
               </label>
               <input
                 type={showPassword ? "text" : "password"}
                 name="password"
-                placeholder="Your password"
-                className="input input-bordered rounded-none input-info  bg-transparent focus:outline-none"
+                placeholder="Please enter your password"
+                className="input input-bordered rounded-none input-info  bg-transparent text-white focus:outline-none"
                 required
               />
               <p
@@ -134,11 +139,11 @@ const Register = () => {
                 </div>
               )}
             </div>
-            <button className="btn bg-cyan-500 hover:bg-cyan-600 border-none text-white rounded-none w-full mt-4">Register</button>
+            <button className="btn bg-cyan-500 border-none text-white rounded-none w-full mt-4">Register</button>
           </form>
-          <p className="text-center  mt-6">
+          <p className="text-center text-white mt-6">
             Already have an account?{" "}
-            <Link to={"/login"} className="text-cyan-500 hover:underline">
+            <Link to={"/login"} className="text-cyan-200 hover:underline">
               Login
             </Link>
           </p>
