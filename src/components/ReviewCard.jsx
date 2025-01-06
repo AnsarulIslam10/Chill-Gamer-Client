@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 const ReviewCard = ({ review }) => {
   const { _id, name, cover, rating, year, genres } = review;
   return (
-    <div className="flex h-[100%] flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
+    <div className="flex h-[100%] bg-white flex-col justify-center items-center shadow-sm hover:shadow-md p-6 hover:scale-105 transition-all duration-300">
       <img className="mb-3 w-full aspect-video object-cover" src={cover} alt="" />
       <div className="flex-1 flex flex-col justify-center items-center text-center">
       <h2 className="text-2xl font-semibold text-cyan-500">{name}</h2>

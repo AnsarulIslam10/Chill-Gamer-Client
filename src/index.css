@@ -7,7 +7,9 @@
 *{
     @apply transition-colors duration-75
 }
-
+body{
+  background-color: #f4f6f7;
+}
 
 .swiper {
     width: 100%;

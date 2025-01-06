@@ -20,11 +20,11 @@ const HighestRatedGame = () => {
         titles that everyone loves!
       </p>
       {/* cards */}
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
         {/* card */}
         {games.map((game) => (
           <Zoom key={game._id} duration={1000} triggerOnce={true}>
-            <div className="flex h-[100%] flex-col justify-center items-center border dark:border-gray-500 p-6 hover:scale-105 transition-all duration-300">
+            <div className="flex h-[100%] flex-col justify-center items-center bg-white p-6 hover:scale-105 transition-all duration-300">
               <img className="mb-3 w-full aspect-video object-cover" src={game.cover} alt="" />
               <div className="flex-1 flex flex-col justify-center items-center text-center">
               <h2 className="text-2xl font-semibold text-cyan-500">{game.name}</h2>
@@ -45,7 +45,7 @@ const HighestRatedGame = () => {
                 to={`/review/${game._id}`}
                 className="btn bg-cyan-500 border-none rounded-none text-white mt-3"
               >
-                Explore Details
+                See More
               </Link>
             </div>
           </Zoom>
