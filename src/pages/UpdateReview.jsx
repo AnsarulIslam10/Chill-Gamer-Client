@@ -21,7 +21,7 @@ const UpdateReview = () => {
     const form = e.target;
     const name = form.name.value;
     const cover = form.cover.value;
-    const rating = form.rating.value;
+    const rating = parseFloat(form.rating.value);
     const year = form.year.value;
     const genres = form.genres.value;
     const username = form.username.value;
@@ -122,7 +122,7 @@ const UpdateReview = () => {
                   name="rating"
                   min="1"
                   max="5"
-                  step="1"
+                  step="0.1"
                   placeholder="Enter rating (1-5)"
                   defaultValue={rating}
                   className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"

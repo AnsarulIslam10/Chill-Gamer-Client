@@ -10,13 +10,13 @@ const AddReview = () => {
     const form = e.target;
     const name = form.name.value;
     const cover = form.cover.value;
-    const rating = form.rating.value;
+    const rating = parseFloat(form.rating.value); // Convert to float
     const year = form.year.value;
     const genres = form.genres.value;
     const username = form.username.value;
     const email = form.email.value;
     const review = form.review.value;
-    // const rating = Number(ratings);
+  
     const newReview = {
       name,
       cover,
@@ -27,7 +27,7 @@ const AddReview = () => {
       username,
       email,
     };
-
+  
     fetch("https://chill-gamer-server-tau.vercel.app/reviews", {
       method: "POST",
       headers: {
@@ -46,7 +46,7 @@ const AddReview = () => {
           });
         }
       });
-  };
+  };  
   return (
     <div className="min-h-screen flex justify-center items-center">
       <Helmet>
@@ -108,7 +108,7 @@ const AddReview = () => {
                   name="rating"
                   min="1"
                   max="5"
-                  step="1"
+                  step="0.1"
                   placeholder="Enter rating (1-5)"
                   className="input input-bordered rounded-none input-info bg-transparent dark:text-white focus:outline-none"
                 />
