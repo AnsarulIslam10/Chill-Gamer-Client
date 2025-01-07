@@ -16,7 +16,7 @@ const AddReview = () => {
     const username = form.username.value;
     const email = form.email.value;
     const review = form.review.value;
-  
+
     const newReview = {
       name,
       cover,
@@ -27,7 +27,7 @@ const AddReview = () => {
       username,
       email,
     };
-  
+
     fetch("https://chill-gamer-server-tau.vercel.app/reviews", {
       method: "POST",
       headers: {
@@ -42,11 +42,13 @@ const AddReview = () => {
             title: "Success!",
             text: "Review Added Successfully",
             icon: "success",
-            confirmButtonText: "Close",
+            showConfirmButton: false,
+            timer: 1500,
           });
+          form.reset();
         }
       });
-  };  
+  };
   return (
     <div className="min-h-screen flex justify-center items-center">
       <Helmet>
