@@ -52,6 +52,7 @@ const HighestRatedGame = () => {
                     activeColor="#ffd700"
                     edit={false}
                   />
+                  <p>({game.rating})</p>
                 </div>
                 <p className="text-gray-500 dark:text-gray-400">{game.review.slice(0, 50)}...</p>
               </div>

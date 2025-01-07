@@ -42,6 +42,7 @@ const ReviewCard = ({ review }) => {
             activeColor="#ffd700"
             edit={false}
           />
+          <p>({rating})</p>
         </div>
         <p className="text-gray-500 dark:text-gray-400">
           {description.slice(0, 50)}...
