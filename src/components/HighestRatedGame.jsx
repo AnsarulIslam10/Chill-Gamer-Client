@@ -25,17 +25,24 @@ const HighestRatedGame = () => {
         {games.map((game) => (
           <Zoom key={game._id} duration={1000} triggerOnce={true}>
             <div className="flex h-[100%] flex-col justify-center items-center bg-white dark:bg-slate-800 shadow-sm hover:shadow-md p-2 pb-4 hover:scale-105 transition-all duration-300">
-              <img
-                className="mb-3 w-full aspect-video object-cover"
-                src={game.cover}
-                alt=""
-              />
+              <div className="relative">
+                <img
+                  className="mb-3 w-full aspect-video object-cover"
+                  src={game.cover}
+                  alt=""
+                />
+                <span className="text-black absolute bottom-5 right-2 badge bg-cyan-500 border-none">
+                  {game.genres}
+                </span>
+              </div>
               <div className="flex-1 flex flex-col justify-center items-center text-center">
                 <h2
                   className="text-xl font-semibold cursor-pointer text-cyan-500"
                   title={game.name}
                 >
-                  {game.name.length > 20 ? `${game.name.slice(0, 20)}...` : game.name}
+                  {game.name.length > 20
+                    ? `${game.name.slice(0, 20)}...`
+                    : game.name}
                 </h2>
                 <div className="flex items-center">
                   <ReactStars
@@ -45,10 +52,8 @@ const HighestRatedGame = () => {
                     activeColor="#ffd700"
                     edit={false}
                   />
-                  <p>({game.rating})</p>
                 </div>
-                <p>{game.year}</p>
-                <p className="text-cyan-500">{game.genres}</p>
+                <p className="text-gray-500">{game.review.slice(0, 50)}...</p>
               </div>
 
               <Link
