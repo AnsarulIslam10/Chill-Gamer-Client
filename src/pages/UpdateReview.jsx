@@ -21,7 +21,7 @@ const UpdateReview = () => {
     const form = e.target;
     const name = form.name.value;
     const cover = form.cover.value;
-    const rating = parseFloat(form.rating.value);
+    const rating = form.rating.value;
     const year = form.year.value;
     const genres = form.genres.value;
     const username = form.username.value;
