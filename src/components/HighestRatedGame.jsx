@@ -20,7 +20,7 @@ const HighestRatedGame = () => {
         titles that everyone loves!
       </p>
       {/* cards */}
-      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+      <div className="p-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
         {/* card */}
         {games.map((game) => (
           <Zoom key={game._id} duration={1000} triggerOnce={true}>
@@ -53,7 +53,7 @@ const HighestRatedGame = () => {
                     edit={false}
                   />
                 </div>
-                <p className="text-gray-500">{game.review.slice(0, 50)}...</p>
+                <p className="text-gray-500 dark:text-gray-400">{game.review.slice(0, 50)}...</p>
               </div>
 
               <Link

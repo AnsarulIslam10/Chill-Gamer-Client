@@ -71,7 +71,7 @@ const GameWatchlist = () => {
     );
   }
   return (
-    <div className="max-w-7xl mx-auto px-2 my-16">
+    <div className="max-w-7xl mx-auto px-2 mb-10 sm:my-10 md:my-14 lg:my-16">
       <Helmet>
         <title>Chill Gamer | Game Watchlist</title>
       </Helmet>

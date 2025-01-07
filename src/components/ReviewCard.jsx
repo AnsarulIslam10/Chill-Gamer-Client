@@ -6,6 +6,7 @@ const ReviewCard = ({ review }) => {
     _id,
     name,
     cover,
+    year,
     rating,
     genres,
     review: description,
@@ -19,9 +20,12 @@ const ReviewCard = ({ review }) => {
           src={cover}
           alt=""
         />
-        <span className="text-black absolute bottom-5 right-2 badge bg-cyan-500 border-none">
-          {genres}
-        </span>
+        <div className="absolute w-full flex justify-between items-center bottom-5 px-2">
+          <span className="bg-black bg-opacity-10 badge badge-ghost border-none text-white">{year}</span>
+          <span className="text-black badge bg-cyan-500 border-none">
+            {genres}
+          </span>
+        </div>
       </div>
       <div className="flex-1 flex flex-col justify-center items-center text-center">
         <h2
@@ -39,7 +43,9 @@ const ReviewCard = ({ review }) => {
             edit={false}
           />
         </div>
-        <p className="text-gray-500">{description.slice(0, 50)}...</p>
+        <p className="text-gray-500 dark:text-gray-400">
+          {description.slice(0, 50)}...
+        </p>
       </div>
 
       <Link

@@ -64,8 +64,8 @@ const UpdateReview = () => {
       <Helmet>
         <title>Chill Gamer | Update Review</title>
       </Helmet>
-      <div className="max-w-7xl mb-12 px-4 py-16 mx-auto">
-        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 border-cyan-100 border dark:border-none shadow-lg shadow-cyan-200 dark:shadow-none mx-auto">
+      <div className="max-w-7xl mb-12 flex-1 px-4 mx-auto py-6 sm:py-10 md:py-14 lg:py-16">
+        <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg border-cyan-100 border dark:border-none shadow-cyan-200 dark:shadow-none mx-auto shrink-0">
           <form
             onSubmit={handleUpdateReview}
             className="card-body text-black shadow-lg"
@@ -73,9 +73,8 @@ const UpdateReview = () => {
             <h2 className="mb-4 text-center text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
               Update Your Game Review
             </h2>
-            <p className="text-sm text-center max-w-xl mx-auto mb-6 text-gray-500 dark:text-gray-400">
+            <p className="text-xs sm:text-sm text-center max-w-xl mx-auto mb-6 text-gray-500 dark:text-gray-400">
               Update your review and share your latest thoughts to help others
-              make informed decisions on their next game!
             </p>
 
             {/* Form Fields */}
@@ -185,7 +184,7 @@ const UpdateReview = () => {
                 />
               </div>
 
-              <div className="form-control">
+              <div className="form-control sm:col-span-2">
                 <label className="label">
                   <span className="label-text dark:text-white text-lg">
                     User Email
@@ -212,7 +211,7 @@ const UpdateReview = () => {
                 <textarea
                   name="review"
                   defaultValue={description}
-                  className="textarea textarea-bordered rounded-none bg-transparent textarea-info dark:text-white focus:outline-none"
+                  className="textarea textarea-bordered rounded-none bg-transparent textarea-info h-32 md:h-40 dark:text-white focus:outline-none"
                   placeholder="Write your review"
                 ></textarea>
               </div>

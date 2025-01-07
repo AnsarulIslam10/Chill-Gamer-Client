@@ -27,7 +27,7 @@ const AllReviews = () => {
   };
 
   return (
-    <div className="max-w-7xl px-2 my-16 mx-auto">
+    <div className="max-w-7xl px-2 mb-10 sm:my-10 md:my-14 lg:my-16 mx-auto">
       <Helmet>
         <title>Chill Gamer | All Reviews</title>
       </Helmet>

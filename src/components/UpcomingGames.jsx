@@ -25,7 +25,7 @@ const UpcomingGames = () => {
           {upcomingGames.map((game) => (
             <div
               key={game.id}
-              className="game-card bg-white p-4 shadow-sm hover:shadow-lg transition-all duration-300"
+              className="game-card bg-white dark:bg-slate-800 p-4 shadow-sm hover:shadow-lg transition-all duration-300"
             >
               <img
                 src={game.image}

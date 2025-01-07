@@ -52,7 +52,7 @@ const AddReview = () => {
       <Helmet>
         <title>Chill Gamer | Add Review</title>
       </Helmet>
-      <div className="max-w-7xl mb-52 flex-1 px-4 mx-auto py-16">
+      <div className="max-w-7xl mb-12 flex-1 px-4 mx-auto py-6 sm:py-10 md:py-14 lg:py-16">
         <div className="card w-full max-w-3xl backdrop-blur-md dark:bg-white/10 shadow-lg border-cyan-100 border dark:border-none shadow-cyan-200 dark:shadow-none mx-auto shrink-0">
           <form
             onSubmit={handleAddReview}
@@ -61,7 +61,7 @@ const AddReview = () => {
             <h2 className="text-center mb-2 text-2xl sm:text-3xl md:text-4xl text-cyan-500 font-orbitron font-bold">
               Add Your Game Review
             </h2>
-            <p className="text-sm max-w-xl mx-auto text-center mb-6 text-gray-500 dark:text-gray-400">
+            <p className="text-xs sm:text-sm max-w-xl mx-auto text-center mb-6 text-gray-500 dark:text-gray-400">
               Share your gaming experience and help others choose their next
               favorite game!
             </p>
@@ -167,7 +167,7 @@ const AddReview = () => {
                 />
               </div>
 
-              <div className="form-control">
+              <div className="form-control sm:col-span-2">
                 <label className="label">
                   <span className="label-text text-black dark:text-white text-lg">
                     User Email
@@ -192,7 +192,7 @@ const AddReview = () => {
               </label>
               <textarea
                 name="review"
-                className="textarea textarea-bordered rounded-none bg-transparent textarea-info dark:text-white focus:outline-none"
+                className="textarea textarea-bordered h-32 md:h-40 rounded-none bg-transparent textarea-info dark:text-white focus:outline-none"
                 placeholder="Write your review"
               ></textarea>
             </div>

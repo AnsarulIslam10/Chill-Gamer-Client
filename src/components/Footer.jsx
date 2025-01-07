@@ -34,7 +34,7 @@ const Footer = () => {
           <h6 className="text-xl text-black dark:text-gray-300 font-semibold">
             Quick Links
           </h6>
-          <Link to={'/'} className="link link-hover">About us</Link>
+          <Link to={'/'} className="link link-hover">Home</Link>
           <Link to={'/reviews'} className="link link-hover">Game Reviews</Link>
           <Link to={'/addReview'} className="link link-hover">Add Review</Link>
           <Link to={'/myReviews'} className="link link-hover">My Review</Link>
