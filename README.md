@@ -19,8 +19,6 @@ Chill Gamer is a user-friendly game review application. Here users can explore a
 - **Authentication:** Firebase Authentication.
 - **Pop-up Alerts:** SweetAlert2 & React Toastify for interactive pop-ups.
 
-
-## NPM Packages Used
 ## Dependencies
 
 - `firebase`: ^11.0.2
@@ -58,3 +56,12 @@ Chill Gamer is a user-friendly game review application. Here users can explore a
 - `postcss`: ^8.4.49
 - `tailwindcss`: ^3.4.15
 - `vite`: ^6.0.1
+
+  ## Installation
+1. Clone the repo:  
+   `git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git`
+2. Install dependencies:  
+   `npm install`
+3. Set up Firebase and add config in `.env`
+4. Run locally:  
+   `npm run dev`
