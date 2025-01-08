@@ -60,14 +60,14 @@ Chill Gamer is a user-friendly game review application. Here users can explore a
   ## Installation
 1. Clone the repo:
    ```
-   `git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git`
+   git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git
    ```
 3. Install dependencies:
    ```
-   `npm install`
+   npm install
    ```
 5. Set up Firebase and add config in `.env`
 6. Run locally:
    ```
-   `npm run dev`
+   npm run dev
    ```
