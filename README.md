@@ -1,5 +1,5 @@
-# [Chill Gamer](https://chill-gamer-351bd.web.app/)
-## [Live Link](https://chill-gamer-351bd.web.app/)
+# [Chill Gamer | Live Link🔗](https://chill-gamer-351bd.web.app)
+
 
 Chill Gamer is a user-friendly game review application. Here users can explore and share game reviews.
 
