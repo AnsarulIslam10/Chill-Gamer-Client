@@ -3,6 +3,11 @@
 
 Chill Gamer is a user-friendly game review application. Here users can explore and share game reviews.
 
+<br>
+
+![Chill Gamer](https://i.ibb.co.com/wsck4DH/chill-games-ss.png)
+
+
 ## Features
  - **Game Reviews**: Browse through a collection of user reviews for the latest games across multiple genres.
  - **Add Review:** Users can add their own reviews for games, and rate games based on their personal experience.
