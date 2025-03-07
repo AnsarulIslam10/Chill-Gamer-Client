@@ -1,6 +1,12 @@
-# [Chill Gamer](https://chill-gamer-351bd.web.app/)
+# [Chill Gamer | Live Link🔗](https://chill-gamer-351bd.web.app)
+
 
 Chill Gamer is a user-friendly game review application. Here users can explore and share game reviews.
+
+<br>
+
+![Chill Gamer](https://i.ibb.co.com/wsck4DH/chill-games-ss.png)
+
 
 ## Features
  - **Game Reviews**: Browse through a collection of user reviews for the latest games across multiple genres.
@@ -18,18 +24,56 @@ Chill Gamer is a user-friendly game review application. Here users can explore a
 - **Authentication:** Firebase Authentication.
 - **Pop-up Alerts:** SweetAlert2 & React Toastify for interactive pop-ups.
 
+## Dependencies
 
-## NPM Packages Used
-- `react-tooltip`
-- `react-awesome-reveal`
-- `react-simple-typewriter`
-- `sweetalert2`
-- `swiper`
-- `firebase`
-- `react-copy-to-clipboard`
-- `react-fast-marquee`
-- `react-helmet-async`
-- `react-icons`
-- `react-rating-stars-component`
-- `react-router-dom`
-- `react-toastify`
+- `firebase`: ^11.0.2
+- `localforage`: ^1.10.0
+- `match-sorter`: ^8.0.0
+- `react`: ^18.3.1
+- `react-awesome-reveal`: ^4.2.14
+- `react-dom`: ^18.3.1
+- `react-fast-marquee`: ^1.6.5
+- `react-helmet-async`: ^2.0.5
+- `react-icons`: ^5.4.0
+- `react-native-toggle-element`: ^2.1.1
+- `react-rating-stars-component`: ^2.2.0
+- `react-router-dom`: ^7.0.2
+- `react-simple-typewriter`: ^5.0.1
+- `react-toastify`: ^10.0.6
+- `react-tooltip`: ^5.28.0
+- `sort-by`: ^1.2.0
+- `sweetalert2`: ^11.14.5
+- `swiper`: ^11.1.15
+
+## Dev Dependencies
+
+- `@eslint/js`: ^9.15.0
+- `@types/react`: ^18.3.12
+- `@types/react-dom`: ^18.3.1
+- `@vitejs/plugin-react`: ^4.3.4
+- `autoprefixer`: ^10.4.20
+- `daisyui`: ^4.12.14
+- `eslint`: ^9.15.0
+- `eslint-plugin-react`: ^7.37.2
+- `eslint-plugin-react-hooks`: ^5.0.0
+- `eslint-plugin-react-refresh`: ^0.4.14
+- `globals`: ^15.12.0
+- `postcss`: ^8.4.49
+- `tailwindcss`: ^3.4.15
+- `vite`: ^6.0.1
+
+  ## Installation
+1. Clone the repo:
+   ```
+   git clone https://github.com/AnsarulIslam10/Chill-Gamer-Client.git
+   ```
+2. Install dependencies:
+   ```
+   npm install
+   ```
+3. Set up Firebase and add config in `.env`
+   
+4. Run locally:
+   ```
+   npm run dev
+   ```
